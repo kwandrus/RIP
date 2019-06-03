@@ -1,0 +1,473 @@
+fileFormatVersion: 2
+guid: 4c5dbb3f546064a9099bcb9613f1e7c8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6419689764794377633
+    second: cigSpriteSheet_0
+  - first:
+      213: 5805277916393854118
+    second: cigSpriteSheet_1
+  - first:
+      213: 4226338176673903325
+    second: cigSpriteSheet_2
+  - first:
+      213: 974383121801701047
+    second: cigSpriteSheet_3
+  - first:
+      213: -3383777000757831480
+    second: cigSpriteSheet_4
+  - first:
+      213: 6309427713580042948
+    second: cigSpriteSheet_5
+  - first:
+      213: 7204025776629762756
+    second: cigSpriteSheet_6
+  - first:
+      213: -7937263299550246853
+    second: cigSpriteSheet_7
+  - first:
+      213: -2528267052513825699
+    second: cigSpriteSheet_8
+  - first:
+      213: 2605430433768636737
+    second: cigSpriteSheet_9
+  - first:
+      213: 2780912781316716521
+    second: cigSpriteSheet_10
+  - first:
+      213: -5141228778937462240
+    second: cigSpriteSheet_11
+  - first:
+      213: 3681055630588871708
+    second: cigSpriteSheet_12
+  - first:
+      213: 9207996140863068738
+    second: cigSpriteSheet_13
+  - first:
+      213: 7980263081596184920
+    second: cigSpriteSheet_14
+  - first:
+      213: 418399941343941835
+    second: cigSpriteSheet_15
+  - first:
+      213: 53318318647980674
+    second: cigSpriteSheet_16
+  - first:
+      213: 1707011028096497774
+    second: cigSpriteSheet_17
+  - first:
+      213: -8568767041156581855
+    second: cigSpriteSheet_18
+  - first:
+      213: -436505947994229882
+    second: cigSpriteSheet_19
+  - first:
+      213: -4711650638836990306
+    second: cigSpriteSheet_20
+  - first:
+      213: -2044319602244960006
+    second: cigSpriteSheet_21
+  - first:
+      213: -3499369122686782781
+    second: cigSpriteSheet_22
+  - first:
+      213: 2047818994616411919
+    second: cigSpriteSheet_23
+  - first:
+      213: 8703104289323022576
+    second: cigSpriteSheet_24
+  - first:
+      213: -5007059595080638725
+    second: cigSpriteSheet_25
+  - first:
+      213: -7567480685908734321
+    second: cigSpriteSheet_26
+  - first:
+      213: 8333610378665343922
+    second: cigSpriteSheet_27
+  - first:
+      213: 6389427139366175335
+    second: cigSpriteSheet_28
+  - first:
+      213: 6723138656051527526
+    second: cigSpriteSheet_29
+  - first:
+      213: 587382465215665226
+    second: cigSpriteSheet_30
+  - first:
+      213: -5032823692934493055
+    second: cigSpriteSheet_31
+  - first:
+      213: 938596316018728399
+    second: cigSpriteSheet_32
+  - first:
+      213: -7191894149429711364
+    second: cigSpriteSheet_33
+  - first:
+      213: 364472571051612911
+    second: cigSpriteSheet_34
+  - first:
+      213: -7442799837902665014
+    second: cigSpriteSheet_35
+  - first:
+      213: 9047228592247286509
+    second: cigSpriteSheet_36
+  - first:
+      213: -3717802618493133400
+    second: cigSpriteSheet_37
+  - first:
+      213: 7077786935668307136
+    second: cigSpriteSheet_38
+  - first:
+      213: 1015107098664587543
+    second: cigSpriteSheet_39
+  - first:
+      213: 8802666085075078848
+    second: cigSpriteSheet_40
+  - first:
+      213: -5057740137722637508
+    second: cigSpriteSheet_41
+  - first:
+      213: -7965444632803229584
+    second: cigSpriteSheet_42
+  - first:
+      213: 5394330076831324504
+    second: cigSpriteSheet_43
+  - first:
+      213: 129740000638655369
+    second: cigSpriteSheet_44
+  - first:
+      213: 4680248015425174096
+    second: cigSpriteSheet_45
+  - first:
+      213: -7693518004644270771
+    second: cigSpriteSheet_46
+  - first:
+      213: 2386980989468544699
+    second: cigSpriteSheet_47
+  - first:
+      213: 2348643897042039227
+    second: cigSpriteSheet_48
+  - first:
+      213: 8495387656529150924
+    second: cigSpriteSheet_49
+  - first:
+      213: 2133507360406799406
+    second: cigSpriteSheet_50
+  - first:
+      213: 4293686304009066876
+    second: cigSpriteSheet_51
+  - first:
+      213: -6337207366419411784
+    second: cigSpriteSheet_52
+  - first:
+      213: 8684031988107821771
+    second: cigSpriteSheet_53
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cigSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 639
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce013b1da3c84a79affb8e82dd54ad5
+      internalID: -6419689764794377633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 639
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49c2b614b31643d3853ab6f24a1569a
+      internalID: 5805277916393854118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 639
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5f6cfab6eb9429aa8c907424fac9c9
+      internalID: 4226338176673903325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 639
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2190e40e3a9d34b08b381963bd0e84b4
+      internalID: 974383121801701047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 639
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22302f82b968041688c50e615d057088
+      internalID: -3383777000757831480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704bcc8e7a289460b908d10ec0761d76
+      internalID: 6309427713580042948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 0
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d1ac4a84a2f46daa1f91689233e5fa
+      internalID: 7204025776629762756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 0
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760c8307a62314d97964d67fb6c578a6
+      internalID: -7937263299550246853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 0
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55105300983c46bb94820660667323d
+      internalID: -2528267052513825699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cigSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 0
+        width: 639
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7d221ea7fc74eafa25a4322191d347
+      internalID: 2605430433768636737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 93480e9f6c3cd49f493a46406ce18e20
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
