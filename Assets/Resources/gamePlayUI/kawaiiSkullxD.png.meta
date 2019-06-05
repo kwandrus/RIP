@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: b63295d9a6ebd49ab91824210fa19c0e
+guid: 2576bcc8ba9874ec99f32bbe070b49f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5269407847360402555
-    second: Smoke and Fire_0
+      213: -836713169537382424
+    second: kawaiiSkullxD_0
   - first:
-      213: 8156789625432207679
-    second: Smoke and Fire_1
+      213: 2483242391555381426
+    second: kawaiiSkullxD_1
   - first:
-      213: -510674134815800392
-    second: Smoke and Fire_2
+      213: 2017996139091953436
+    second: kawaiiSkullxD_2
   - first:
-      213: -2300997125008174848
-    second: Smoke and Fire_3
+      213: 8185892250324152559
+    second: kawaiiSkullxD_3
   - first:
-      213: -5934202376675510445
-    second: Smoke and Fire_4
+      213: 6568988908265850488
+    second: kawaiiSkullxD_4
   - first:
-      213: -2724284889574827852
-    second: Smoke and Fire_5
+      213: 7453218765524643934
+    second: kawaiiSkullxD_5
   - first:
-      213: -3570784671548808023
-    second: Smoke and Fire_6
+      213: -3564952836182179170
+    second: kawaiiSkullxD_6
   - first:
-      213: 6300930118627725654
-    second: Smoke and Fire_7
+      213: 2592274889860094719
+    second: kawaiiSkullxD_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -108,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smoke and Fire_0
+      name: kawaiiSkullxD_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 32
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,20 +122,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31d5b6fa078f54e9ab03fb1d4ca17e1a
-      internalID: 5269407847360402555
+      spriteID: 59f2d4cbf69184f568a920eae6062f51
+      internalID: -836713169537382424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke and Fire_1
+      name: kawaiiSkullxD_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 32
+        x: 200
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f8d794db8fa428e836568e10108e26
-      internalID: 8156789625432207679
+      spriteID: 09c4ca7448f8546d9aea28233978646b
+      internalID: 2483242391555381426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke and Fire_2
+      name: kawaiiSkullxD_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 32
+        x: 400
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d63c10c707332485993942c1104d411e
-      internalID: -510674134815800392
+      spriteID: 6d99f59d9d7e3423f95a61fc2a5cfeea
+      internalID: 2017996139091953436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke and Fire_3
+      name: kawaiiSkullxD_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 32
+        x: 600
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a684529e4e1dd48f1aa7943bdaf29265
-      internalID: -2300997125008174848
+      spriteID: 6e26ba5e0831f4cb596121df471c415f
+      internalID: 8185892250324152559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke and Fire_4
+      name: kawaiiSkullxD_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35df81e478a944a52a303a7c40d50e54
+      internalID: 6568988908265850488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kawaiiSkullxD_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 32
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b458011ce65b44c629a7235d277046d8
-      internalID: -5934202376675510445
+      spriteID: 83ded507050814a788b99d3440acecf0
+      internalID: 7453218765524643934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke and Fire_5
+      name: kawaiiSkullxD_6
       rect:
         serializedVersion: 2
-        x: 16
+        x: 200
         y: 0
-        width: 16
-        height: 32
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa5f0e554084742f8b69031130cd8e69
-      internalID: -2724284889574827852
+      spriteID: 23a2d8b8b713648c7aef41c26ceff7c7
+      internalID: -3564952836182179170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke and Fire_6
+      name: kawaiiSkullxD_7
       rect:
         serializedVersion: 2
-        x: 32
+        x: 400
         y: 0
-        width: 16
-        height: 32
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,29 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189728627409c4a449a1549ff755f20a
-      internalID: -3570784671548808023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoke and Fire_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28e506a0268224e8abff5e52c934e861
-      internalID: 6300930118627725654
+      spriteID: cbc168d66179d462886e6b616a4f6ef2
+      internalID: 2592274889860094719
       vertices: []
       indices: 
       edges: []
@@ -278,7 +278,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fe72ce248ace5428c94ee720424838b8
+    spriteID: 32f19dcc8af414e7aa4c9ed211b792f8
     internalID: 0
     vertices: []
     indices: 
