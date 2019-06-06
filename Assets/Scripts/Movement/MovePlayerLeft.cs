@@ -6,21 +6,19 @@ using Player.Command;
 
 namespace Player.Command
 {
-    public class MovePlayer : ScriptableObject, IPlayerCommand
+    public class MovePlayerLeft : ScriptableObject, IPlayerCommand
     {
-        private float HorizontalDir;
         private ADSRManager ADSR;
         public void ButtonDown(GameObject gameObject)
         {
             ADSR = gameObject.GetComponent<ADSRManager>();
             var Movement = ADSR.GetDirection();
-            HorizontalDir = Input.GetAxis("Horizontal");
 
             if (ADSRManager.Direction.None == Movement)
             {
                 ADSR.ResetTimers();
                 ADSR.SetPhase(ADSRManager.Phase.Attack);
-                ADSR.SetInputDirection(HorizontalDir);
+                ADSR.SetInputDirection(-Time.deltaTime);
 
                 // Sets direction to know that player is moving.
                 ADSR.SetDirection(ADSRManager.Direction.Horizontal);
@@ -30,17 +28,15 @@ namespace Player.Command
         public void ButtonHold(GameObject gameObject)
         {
             ADSR = gameObject.GetComponent<ADSRManager>();
-            HorizontalDir = Input.GetAxis("Horizontal");
 
-            ADSR.SetInputDirection(HorizontalDir);
+            ADSR.SetInputDirection(-Time.deltaTime);
         }
         public void ButtonUp(GameObject gameObject)
         {
             bool Grounded = ADSR.GetGrounded();
             ADSR = gameObject.GetComponent<ADSRManager>();
-            HorizontalDir = Input.GetAxis("Horizontal");
 
-            ADSR.SetInputDirection(HorizontalDir);
+            ADSR.SetInputDirection(-Time.deltaTime);
             if (!Grounded)
             {
                 // The player is mid-air so the envelope remains at Sustain.

@@ -15,7 +15,7 @@ namespace Player.Command
             JUMP_FACTOR = gameobject.GetComponent<ADSRManager>().GetJump();
 
             // Adding a force to simulate a jump.
-            gameobject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, JUMP_FACTOR));
+            gameobject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, JUMP_FACTOR),ForceMode2D.Impulse);
         }
         public void ButtonHold(GameObject gameobject)
         {

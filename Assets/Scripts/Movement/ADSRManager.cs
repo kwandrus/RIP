@@ -20,11 +20,13 @@ public class ADSRManager : MonoBehaviour
     [SerializeField] private float ReleaseDuration = 0.25f;
     [SerializeField] private AnimationCurve Release;
     [SerializeField] private float JUMP_FACTOR = 2.0f;
+    [SerializeField] private float MoveTimer = 2.0f;
 
     private float AttackTimer;
     private float DecayTimer;
     private float SustainTimer;
     private float ReleaseTimer;
+    private float ElapsedTime;
 
     private float InputDirection = 0.0f;
 
@@ -76,7 +78,15 @@ public class ADSRManager : MonoBehaviour
 
     public void SetInputDirection(float direction)
     {
-        this.InputDirection = direction;
+        this.ElapsedTime += direction;
+        if ((ElapsedTime/MoveTimer) >= 1)
+        {
+            this.InputDirection = 1.0f;
+        }
+        else
+        {
+            this.InputDirection = ElapsedTime/MoveTimer;
+        }
     }
 
     public void SetGrounded(bool logic)
@@ -153,5 +163,6 @@ public class ADSRManager : MonoBehaviour
         this.DecayTimer = 0.0f;
         this.SustainTimer = 0.0f;
         this.ReleaseTimer = 0.0f;
+        this.ElapsedTime = 0.0f;
     }
 }

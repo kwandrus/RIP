@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private IPlayerCommand Shoot;
     private IPlayerCommand Right;
-    private IPlayerCommand Horizontal;
+    private IPlayerCommand Left;
     private IPlayerCommand Jump;
 
     KeyCode keyShoot;
@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //this.Shoot = this.gameObject.AddComponent<PlayerShootCommand>();
-        //this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
-        this.Horizontal = ScriptableObject.CreateInstance<MovePlayer>();
+        this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
+        this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
         this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
 
         resetControls();
@@ -66,17 +66,30 @@ public class PlayerController : MonoBehaviour
 
         // Movement script utilizes [-1,1] value of Input.GetAxis() so it I only
         // needed to implement for the axis itself, not certain direction.
-        if (Input.GetButtonDown("Horizontal"))
+        if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0.0f)
         {
-            this.Horizontal.ButtonDown(this.gameObject);
+            this.Left.ButtonDown(this.gameObject);
         }
-        if (Input.GetButton("Horizontal"))
+        if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") < 0.0f)
         {
-            this.Horizontal.ButtonHold(this.gameObject);
+            this.Left.ButtonHold(this.gameObject);
         }
-        if (Input.GetButtonUp("Horizontal"))
+        if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") < 0.0f)
         {
-            this.Horizontal.ButtonUp(this.gameObject);
+            this.Left.ButtonUp(this.gameObject);
+        }
+
+        if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0.0f)
+        {
+            this.Right.ButtonDown(this.gameObject);
+        }
+        if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") > 0.0f)
+        {
+            this.Right.ButtonHold(this.gameObject);
+        }
+        if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") > 0.0f)
+        {
+            this.Right.ButtonUp(this.gameObject);
         }
 
         if (Input.GetButtonDown("Vertical"))
@@ -84,6 +97,7 @@ public class PlayerController : MonoBehaviour
             // Positive number means that it is going upwards, aka a jump.
             if (Input.GetAxis("Vertical") > 0.0f)
             {
+                Debug.Log("Up");
                 this.Jump.ButtonDown(this.gameObject);
             }
         }
