@@ -40,7 +40,7 @@ public class ADSRManager : MonoBehaviour
     private Direction Movement;
 
     // Whether or not player is touching the ground.
-    private bool Grounded = true;
+    [SerializeField] private bool Grounded = false;
 
     void Start()
     {
@@ -79,9 +79,13 @@ public class ADSRManager : MonoBehaviour
     public void SetInputDirection(float direction)
     {
         this.ElapsedTime += direction;
-        if ((ElapsedTime/MoveTimer) >= 1)
+        if ((ElapsedTime/MoveTimer) >= 1.0f)
         {
             this.InputDirection = 1.0f;
+        }
+        else if ((ElapsedTime/MoveTimer) <= -1.0f)
+        {
+            this.InputDirection = -1.0f;
         }
         else
         {
@@ -102,6 +106,11 @@ public class ADSRManager : MonoBehaviour
     public float GetJump()
     {
         return this.JUMP_FACTOR;
+    }
+
+    public void SetPhaseNone()
+    {
+        this.Movement = Direction.None;
     }
 
     // Calculation of ADSR Envelope

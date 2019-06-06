@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
             // Positive number means that it is going upwards, aka a jump.
             if (Input.GetAxis("Vertical") > 0.0f)
             {
-                Debug.Log("Up");
                 this.Jump.ButtonDown(this.gameObject);
             }
         }
