@@ -15,6 +15,8 @@ public class MenuButtonsController : MonoBehaviour
     public GameObject QuitButton;
     [SerializeField]
     GameObject Camera;
+    [SerializeField]
+    Light SceneLight;
     enum State { Idle, Animation, Switch};
     private State CurrentState = State.Idle;
     private float AnimationTimer = 0.0f;
