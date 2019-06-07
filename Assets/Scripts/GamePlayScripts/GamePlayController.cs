@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace GamePlay
 {
 
     public class GamePlayController : MonoBehaviour
     {
-        [SerializeField]
-        private float TimeLimit;
 
         float Score = 0.0f;
-        float Time = 0.0f;
+        float totalTime = 10.0f;
         int numDeaths = 0;
+
+        public GameObject timer;
 
         // Start is called before the first frame update
         void Start()
@@ -24,7 +25,10 @@ namespace GamePlay
         // Update is called once per frame
         void Update()
         {
-            if (Time > TimeLimit)
+            totalTime -= Time.deltaTime;
+            timer.GetComponent<TMP_Text>().text = totalTime.ToString("F2");
+
+            if (totalTime <= 0f)
             {
                 GameOverTime();
             }

@@ -15,6 +15,7 @@ public class TypeWriter : MonoBehaviour
     private string currText;
     public GameObject textBub;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,17 +24,14 @@ public class TypeWriter : MonoBehaviour
 
     private IEnumerator ShowText()
     {
-        Debug.Log(textBub.activeSelf);
-        if (textBub.activeSelf == true)
-        {
+
             for (int i = 0; i < fullText.Length; i++)
             {
-
                 currText = fullText.Substring(0, i);
                 this.GetComponent<TMP_Text>().text = currText;
                 yield return new WaitForSeconds(delay);
             }
-        }
+        
     }
 
 }
