@@ -21,7 +21,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (rigidBody2D.velocity.x < 1 && rigidBody2D.velocity.x > -1)
         {
-            animator.SetBool("Running", false);
+            //animator.SetBool("Running", false);
         }
     }
 
