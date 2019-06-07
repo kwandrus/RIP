@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseTime.unity
     guid: 3f0d07e80d5ac459e8ef7935944810d9
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: f18cb769e2d4c44948561d6f4f47bec0
   m_configObjects: {}
