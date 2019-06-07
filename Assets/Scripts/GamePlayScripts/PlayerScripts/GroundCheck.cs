@@ -5,11 +5,13 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private GameObject Player;
+    private ADSRManager ADSR;
 
     void Start()
     {
         // Gets parent's gameObject
         this.Player = gameObject.transform.parent.gameObject;
+        ADSR = this.Player.GetComponent<ADSRManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -17,6 +19,13 @@ public class GroundCheck : MonoBehaviour
         if (collision.transform.tag == "Walkable")
         {
             Player.GetComponent<ADSRManager>().SetGrounded(true);
+
+            // fixed bug where releasing horizontal movement during a jump would cause the player to keep sliding once landed
+            if (ADSR.GetPhase() == ADSRManager.Phase.Sustain && !Input.GetButton("Horizontal"))
+            {
+                ADSR.SetPhase(ADSRManager.Phase.Release);
+                ADSR.SetDirection(ADSRManager.Direction.None);
+            }
         }
     }
 

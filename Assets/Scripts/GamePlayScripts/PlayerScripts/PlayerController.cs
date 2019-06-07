@@ -31,10 +31,7 @@ namespace Player.Command
         void Update()
         {
             var animator = this.gameObject.GetComponent<Animator>();
-            /*if(Input.GetButton("Horizontal") && Input.GetButtonUp("Horizontal"))
-            {
 
-            }*/
             // Movement script utilizes [-1,1] value of Input.GetAxis() so it I only
             // needed to implement for the axis itself, not certain direction.
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
