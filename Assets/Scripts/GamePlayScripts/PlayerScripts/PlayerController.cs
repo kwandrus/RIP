@@ -11,6 +11,8 @@ namespace Player.Command
         private IPlayerCommand Left;
         private IPlayerCommand Jump;
 
+        PlayerAnimation playerAnimation;
+
         KeyCode keyShoot;
         KeyCode keyRight;
         KeyCode keyLeft;
@@ -23,6 +25,7 @@ namespace Player.Command
             this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
             this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
             this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
+            playerAnimation = gameObject.GetComponent<PlayerAnimation>();
 
             resetControls();
         }
@@ -37,31 +40,33 @@ namespace Player.Command
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonDown(this.gameObject);
-                animator.SetBool("isRunning", true);
+                playerAnimation.MoveLeft();
             }
             else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonHold(this.gameObject);
+                playerAnimation.MoveLeft();
             }
             else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonUp(this.gameObject);
-                animator.SetBool("isRunning", false);
+                playerAnimation.MoveLeft();
             }
 
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonDown(this.gameObject);
-                animator.SetBool("isRunning", true);
+                playerAnimation.MoveRight();
             }
             else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonHold(this.gameObject);
+                playerAnimation.MoveRight();
             }
             else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonUp(this.gameObject);
-                animator.SetBool("isRunning", false);
+                playerAnimation.MoveRight();
             }
 
             if (Input.GetButtonDown("Vertical"))
