@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 5c01c3f98b991a94c9c3662479487a4e
+  - enabled: 1
+    path: Assets/Scenes/GamePlay.unity
+    guid: f23b1098d3fde4a6d908c09d1b262f21
+  - enabled: 1
+    path: Assets/Scenes/LoseTime.unity
+    guid: 3f0d07e80d5ac459e8ef7935944810d9
   m_configObjects: {}

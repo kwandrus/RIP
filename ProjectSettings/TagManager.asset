@@ -7,6 +7,8 @@ TagManager:
   - tony
   - caleb
   - Walkable
+  - player
+  - enemy
   layers:
   - Default
   - TransparentFX

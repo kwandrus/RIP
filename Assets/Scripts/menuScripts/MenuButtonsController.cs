@@ -75,7 +75,7 @@ public class MenuButtonsController : MonoBehaviour
 
         PlayButton.transform.Translate(buttonMovementVectorLeft);
         OptionsButton.transform.Translate(buttonMovementVectorRight);
-        QuitButton.transform.Translate(buttonMovementVectorLeft);
+        QuitButton.transform.Translate(buttonMovementVectorRight);
     }
 
     private void DisableButtons()

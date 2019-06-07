@@ -6,7 +6,9 @@ public class typeWriterController : MonoBehaviour
 {
     // Start is called before the first frame update
     private TypeWriter writer;
-    public GameObject textBubble; 
+
+    public GameObject textBubble;
+
 
     void Start()
     {
@@ -21,5 +23,6 @@ public class typeWriterController : MonoBehaviour
         {
             writer.enabled = true;
         }
+
     }
 }
