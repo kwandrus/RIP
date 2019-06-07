@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tony
   - caleb
+  - Walkable
   layers:
   - Default
   - TransparentFX
