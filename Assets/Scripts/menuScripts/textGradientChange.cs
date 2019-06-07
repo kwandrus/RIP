@@ -28,6 +28,16 @@ public class textGradientChange : MonoBehaviour, IPointerEnterHandler, IPointerE
         Debug.Log("im out");
     }
 
+    public void flipText()
+    {
+        txt.isRightToLeftText = true;
+    }
+
+    public void unflipText()
+    {
+        txt.isRightToLeftText = false;
+    }
+
     public void OnSelect(BaseEventData eventData)
     {
         // When selected -- For you, input man 

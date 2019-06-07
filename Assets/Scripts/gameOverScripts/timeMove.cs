@@ -24,6 +24,7 @@ public class timeMove : MonoBehaviour
         {
             this.gameObject.transform.Translate(1, 0, 0);
             lifetime2 = 4f;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         else
@@ -34,6 +35,7 @@ public class timeMove : MonoBehaviour
             {
                 lifetime = 4f;
             }
+            GetComponent<SpriteRenderer>().flipX = true;
 
         }
 
