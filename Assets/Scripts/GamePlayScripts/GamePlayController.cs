@@ -11,7 +11,7 @@ namespace GamePlay
     {
 
         float Score = 0.0f;
-        float totalTime = 60.0f;
+        public float totalTime;
         int numDeaths = 0;
 
         public GameObject timer;
