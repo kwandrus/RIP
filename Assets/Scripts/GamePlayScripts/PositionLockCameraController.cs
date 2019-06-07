@@ -13,6 +13,9 @@ namespace Obscura
         private float InitialCamPosx;
         private float InitialCamPosy;
 
+        private float CameraLowerBound = 1.5f;
+        private float CameraLeftBound = 2.0f;
+
         private void Awake()
         {
             this.ManagedCamera = this.gameObject.GetComponent<Camera>();
@@ -29,7 +32,16 @@ namespace Obscura
             var targetPosition = this.Target.transform.position;
             var cameraPosition = this.ManagedCamera.transform.position;
 
-            cameraPosition = new Vector3(targetPosition.x, InitialCamPosy, cameraPosition.z);
+            cameraPosition = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
+
+            if (cameraPosition.y < CameraLowerBound)
+            {
+                cameraPosition.y = CameraLowerBound;
+            }
+            if (cameraPosition.x < CameraLeftBound)
+            {
+                cameraPosition.x = CameraLeftBound;
+            }
 
             this.ManagedCamera.transform.position = cameraPosition;
 
