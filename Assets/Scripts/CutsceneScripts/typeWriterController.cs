@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Turns on the typewriter(text) when the textbubble appears 
+
 public class typeWriterController : MonoBehaviour
 {
     // Start is called before the first frame update

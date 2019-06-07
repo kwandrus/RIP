@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This is so messy. 
+
 public class walk : MonoBehaviour
 {
-    public GameObject textBub;
-    public GameObject textBub2;
+    public GameObject textBub; // Player text
+    public GameObject textBub2; // Enemy text
 
     private float walkPlayer; // distance player walks
 
-    private float walkEnemyTime;  // time it takes for player to come to scene
-    private float walkEnemyDist;  // time it takes for player to come to scene
+    private float walkEnemyTime;  // time it takes for enemy to come to scene
+    private float walkEnemyDist;  // distance enemy walks
 
 
     private int count1; // makes bubble appear once for player (so it can disappear)
-    private int count2; // makes bubble appear once for player (so it can disappear)
+    private int count2; // makes bubble appear once for enemy (so it can disappear)
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class walk : MonoBehaviour
         count1 = 0;
         count2 = 0;
 
-        walkEnemyTime = 6f;
+        walkEnemyTime = 5.5f;
         walkEnemyDist = 1f; 
     }
 

@@ -4,8 +4,7 @@ using UnityEngine;
 
 using TMPro;
 
-// Need to work on having the text "Typewrite" when the bubble shows up .. .
-// not fully working
+// Makes the text act like a typewriter. 
 // Taken from https://www.youtube.com/watch?time_continue=201&v=1qbjmb_1hV4
 
 public class TypeWriter : MonoBehaviour
@@ -14,17 +13,12 @@ public class TypeWriter : MonoBehaviour
     public string fullText;
     private string currText;
     public GameObject textBub;
-    private float lifetime; 
-
 
     // Start is called before the first frame update
     void Start()
-    {
-        lifetime = 2f; 
+    { 
         StartCoroutine(ShowText());
-
     }
-
 
     private IEnumerator ShowText()
     {
@@ -33,7 +27,8 @@ public class TypeWriter : MonoBehaviour
             {
                 currText = fullText.Substring(0, i+1);
                 this.GetComponent<TMP_Text>().text = currText;
-
+                
+                // turns off text bubble and textx when sentence finishes
                 if (i == fullText.Length - 1)
                 {
                     textBub.SetActive(false);
@@ -41,10 +36,6 @@ public class TypeWriter : MonoBehaviour
                 }
 
             yield return new WaitForSeconds(delay);
-                
-
             }
-        
     }
-
 }
