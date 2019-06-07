@@ -25,7 +25,6 @@ namespace Player.Command
             this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
             this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
             this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
-            //playerAnimation = gameObject.GetComponent<PlayerAnimation>();
             animator = gameObject.GetComponent<Animator>();
 
             resetControls();
@@ -69,13 +68,9 @@ namespace Player.Command
                 animator.SetBool("isRunning", false);
             }
 
-            if (Input.GetButtonDown("Vertical"))
+            if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") > 0.0f)
             {
-                // Positive number means that it is going upwards, aka a jump.
-                if (Input.GetAxis("Vertical") > 0.0f)
-                {
-                    this.Jump.ButtonDown(this.gameObject);
-                }
+                this.Jump.ButtonDown(this.gameObject);
             }
 
             else if (Input.GetKeyDown(KeyCode.Space))

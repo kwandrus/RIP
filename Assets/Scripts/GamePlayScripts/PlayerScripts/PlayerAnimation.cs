@@ -17,14 +17,6 @@ public class PlayerAnimation : MonoBehaviour
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
-    {
-        if (rigidBody2D.velocity.x < 1 && rigidBody2D.velocity.x > -1)
-        {
-            //animator.SetBool("Running", false);
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
