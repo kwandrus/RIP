@@ -55,7 +55,7 @@ public class ADSRManager : MonoBehaviour
         if (this.CurrentPhase != Phase.None)
         {
             var position = this.gameObject.transform.position;
-            position.x += this.InputDirection * this.Speed * this.ADSREnvelope() * Time.deltaTime * 50.0f;
+            position.x += this.InputDirection * this.Speed * this.ADSREnvelope() * Time.deltaTime;
             this.gameObject.transform.position = position;
         }
     }
