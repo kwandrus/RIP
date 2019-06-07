@@ -17,15 +17,12 @@ public class textGradientChange : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         // When highlighted
         txt.isRightToLeftText = true;
-        Debug.Log("im in");
-
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         // When unhighlighted
         txt.isRightToLeftText = false;
-        Debug.Log("im out");
     }
 
     public void flipText()
