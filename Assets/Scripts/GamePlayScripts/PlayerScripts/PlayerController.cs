@@ -6,110 +6,38 @@ namespace Player.Command
 {
     public class PlayerController : MonoBehaviour
     {
-        private IPlayerCommand Shoot;
-        private IPlayerCommand Right;
-        private IPlayerCommand Left;
-        private IPlayerCommand Jump;
+        [SerializeField] float TimerDrunk = 5.0f;
+        private bool isDrunk;
 
-        PlayerAnimation playerAnimation;
+        [SerializeField] float TimerAddicted = 10.0f;
+        private bool isAddicted;
 
-        KeyCode keyShoot;
-        KeyCode keyRight;
-        KeyCode keyLeft;
-        KeyCode keyJump;
-
-        // Start is called before the first frame update
-        void Start()
+        private void Update()
         {
-            //this.Shoot = this.gameObject.AddComponent<PlayerShootCommand>();
-            this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
-            this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
-            this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
-            playerAnimation = gameObject.GetComponent<PlayerAnimation>();
-
-            resetControls();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            var animator = this.gameObject.GetComponent<Animator>();
-
-            // Movement script utilizes [-1,1] value of Input.GetAxis() so it I only
-            // needed to implement for the axis itself, not certain direction.
-            if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
+            if(isDrunk)
             {
-                this.Left.ButtonDown(this.gameObject);
-                playerAnimation.MoveLeft();
-            }
-            else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
-            {
-                this.Left.ButtonHold(this.gameObject);
-                playerAnimation.MoveLeft();
-            }
-            else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
-            {
-                this.Left.ButtonUp(this.gameObject);
-                playerAnimation.MoveLeft();
+                TimerDrunk -= Time.deltaTime;
             }
 
-            if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
+            if(isAddicted)
             {
-                this.Right.ButtonDown(this.gameObject);
-                playerAnimation.MoveRight();
-            }
-            else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
-            {
-                this.Right.ButtonHold(this.gameObject);
-                playerAnimation.MoveRight();
-            }
-            else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
-            {
-                this.Right.ButtonUp(this.gameObject);
-                playerAnimation.MoveRight();
-            }
-
-            if (Input.GetButtonDown("Vertical"))
-            {
-                // Positive number means that it is going upwards, aka a jump.
-                if (Input.GetAxis("Vertical") > 0.0f)
-                {
-                    this.Jump.ButtonDown(this.gameObject);
-                }
-            }
-
-        }
-
-        // Randomizes right, left, jump controls - guarantees at least one key will be different
-        void randomizeControls()
-        {
-            KeyCode temp;
-            while (keyRight == KeyCode.D && keyLeft == KeyCode.A && keyJump == KeyCode.W)
-            {
-                float rand = Random.value;
-                if (rand < 0.5f)
-                {
-                    temp = keyLeft;
-                    keyLeft = keyJump;
-                    keyJump = temp;
-                }
-
-                rand = Random.value;
-                if (rand < 0.5f)
-                {
-                    temp = keyRight;
-                    keyRight = keyJump;
-                    keyJump = temp;
-                }
+                TimerAddicted -= Time.deltaTime;
             }
         }
 
-        void resetControls()
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            keyShoot = KeyCode.Space;
-            keyRight = KeyCode.D;
-            keyLeft = KeyCode.A;
-            keyJump = KeyCode.W;
+            if(collision.transform.tag == "alcohol")
+            {
+                isDrunk = true;
+                // startTimer
+            }
+
+            else if (collision.transform.tag == "cigarette")
+            {
+                isAddicted = true;
+                // starttimer
+            }
         }
 
     }

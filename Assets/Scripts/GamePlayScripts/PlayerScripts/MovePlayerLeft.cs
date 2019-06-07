@@ -30,6 +30,7 @@ namespace Player.Command
         {
             ADSR = gameObject.GetComponent<ADSRManager>();
             var Movement = ADSR.GetDirection();
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
             // if statement fixes bug that caused player to be in None state when switching directions mid-jump
             // Changing to the None state prevented the player from moving in the opposite direction on the same button hold
@@ -42,9 +43,9 @@ namespace Player.Command
                 // Sets direction to know that player is moving.
                 ADSR.SetDirection(ADSRManager.Direction.Horizontal);
             }
-            if (ADSR.getInputDirection() >= 0.85f)
+            if (ADSR.getInputDirection() >= 0.7f)
             {
-                ADSR.SetInputDirection(-0.15f);
+                ADSR.SetInputDirection(-0.3f);
             }
             ADSR.SetInputDirection(-Time.deltaTime);
         }

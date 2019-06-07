@@ -1110,8 +1110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce563d2137a3467489133e74f54835ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 100
-  JumpForce: 7
+  MaxSpeed: 2
+  JumpForce: 2
 --- !u!114 &1006803554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006803546}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5c7d01bb0ba3fe43a47d846973d20fc, type: 3}
   m_Name: 
@@ -1131,11 +1131,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006803546}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3116eb2b034c6a468ab7ea8a37121ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerDrunk: 5
+  TimerAddicted: 10
 --- !u!114 &1006803556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,28 +1150,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3421a6c661ffe064894263189497a0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
-  AttackDuration: 0.5
+  Speed: 3
+  AttackDuration: 0.1
   Attack:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 19.029036
+      outSlope: 19.029036
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
+      time: 0.05255127
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 19.029036
+      outSlope: 19.029036
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1224,7 +1226,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  ReleaseDuration: 0.25
+  ReleaseDuration: 0.15
   Release:
     serializedVersion: 2
     m_Curve:
@@ -1249,9 +1251,39 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  JUMP_FACTOR: 5
-  MoveTimer: 1
+  JUMP_FACTOR: 4
+  MoveTimer: 0.5
   Grounded: 0
+--- !u!1 &1057733678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057733679}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1057733679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057733678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -436.73798, y: 278.16577, z: -684.77637}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127517011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ec15bcb7e21d241b3e93b6c4feaeae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 60
+  totalTime: 100
   timer: {fileID: 11625529}
 --- !u!1 &2144864174
 GameObject:
