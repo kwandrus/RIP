@@ -30,6 +30,7 @@ namespace Player.Command
         // Update is called once per frame
         void Update()
         {
+            var animator = this.gameObject.GetComponent<Animator>();
             /*if(Input.GetButton("Horizontal") && Input.GetButtonUp("Horizontal"))
             {
 
@@ -39,6 +40,7 @@ namespace Player.Command
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonDown(this.gameObject);
+                animator.SetBool("isRunning", true);
             }
             else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
@@ -47,11 +49,13 @@ namespace Player.Command
             else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonUp(this.gameObject);
+                animator.SetBool("isRunning", false);
             }
 
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonDown(this.gameObject);
+                animator.SetBool("isRunning", true);
             }
             else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
@@ -60,6 +64,7 @@ namespace Player.Command
             else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonUp(this.gameObject);
+                animator.SetBool("isRunning", false);
             }
 
             if (Input.GetButtonDown("Vertical"))

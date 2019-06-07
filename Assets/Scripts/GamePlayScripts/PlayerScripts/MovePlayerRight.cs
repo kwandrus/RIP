@@ -23,6 +23,8 @@ namespace Player.Command
                 // Sets direction to know that player is moving.
                 ADSR.SetDirection(ADSRManager.Direction.Horizontal);
             }
+
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         public void ButtonHold(GameObject gameObject)
         {
