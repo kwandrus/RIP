@@ -23,21 +23,21 @@ public class alcoholRain : MonoBehaviour
         // Positions of where alcohol is spawned is hard coded to match canvas
         if (RandNum == 1)
         {
-            var drop = (GameObject)Instantiate(alc1, new Vector3(Random.Range(-200, 200) + transform.position.x, 315, -1),
+            var drop = (GameObject)Instantiate(alc1, new Vector3(Random.Range(-400, 1000) + transform.position.x, 455, -1),
                                     Quaternion.identity);
             Destroy(drop, 10);
         }
 
         if (RandNum == 2)
         {
-            var drop = (GameObject)Instantiate(alc2, new Vector3(Random.Range(-200, 200) + transform.position.x, 315, -1),
+            var drop = (GameObject)Instantiate(alc2, new Vector3(Random.Range(-400, 1000) + transform.position.x, 455, -1),
                                     Quaternion.identity);
             Destroy(drop, 10);
         }
 
         if (RandNum == 3)
         {
-            var drop = (GameObject)Instantiate(alc3, new Vector3(Random.Range(-200, 200) + transform.position.x, 315, -1),
+            var drop = (GameObject)Instantiate(alc3, new Vector3(Random.Range(-400, 1000) + transform.position.x, 455, -1),
                                     Quaternion.identity);
             Destroy(drop, 10);
         }
