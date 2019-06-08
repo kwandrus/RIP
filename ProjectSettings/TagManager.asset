@@ -8,10 +8,13 @@ TagManager:
   - caleb
   - Walkable
   - player
-  - enemy
   - Alcohol
   - Cigarette
   - Checkpoint
+  - Hostile
+  - enemy
+  - Wall
+  - EnemyBoundary
   layers:
   - Default
   - TransparentFX
@@ -26,9 +29,9 @@ TagManager:
   - Foreground
   - Characters
   - 
-  - 
-  - 
-  - 
+  - Wall
+  - EnemyBoundaries
+  - Player
   - 
   - 
   - 

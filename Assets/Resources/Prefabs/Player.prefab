@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2867602215540830019}
   - component: {fileID: 2867602215540830016}
   - component: {fileID: 2867602215540830017}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 2867602215811973588}
   - component: {fileID: 2867602215811973589}
   - component: {fileID: 2867602215811973586}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3116eb2b034c6a468ab7ea8a37121ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerDrunk: 2
-  TimerAddicted: 10
+  DrunkDuration: 0
+  AddictionIntervalDuration: 0
 --- !u!114 &2867602215811973611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 2867602216334512738}
   - component: {fileID: 2867602216334512739}
   - component: {fileID: 3165082404916551911}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

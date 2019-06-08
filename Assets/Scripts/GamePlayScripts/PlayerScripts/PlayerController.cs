@@ -7,50 +7,53 @@ namespace GamePlay.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float TimerDrunk = 2.0f;
-        private bool isDrunk;
+        [SerializeField]
+        private float DrunkDuration;
+        private float drunkTimer;
+        private bool isDrunk = false;
+        private float numAlcoholsCollected = 0;
+        [SerializeField]
+        private float AddictionIntervalDuration;
+        private float addictionIntervalTimer;
+        private bool isAddicted = false;
+        private float numCigsCollected = 0;
 
-        [SerializeField] float TimerAddicted = 10.0f;
-        private bool isAddicted;
 
         GamePlayController gamePlayController;
         PlayerAnimation playerAnimation;
 
-        private float CigCounter;
-        private float AlcoholCounter;
 
         private void Start()
         {
             gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
             playerAnimation = gameObject.GetComponent<PlayerAnimation>();
-
-            isDrunk = false;
-            isAddicted = false;
-            CigCounter = 0.0f;
-            AlcoholCounter = 0.0f;
+            drunkTimer = DrunkDuration;
+            addictionIntervalTimer = AddictionIntervalDuration;
         }
 
         private void Update()
         {
-            //Debug.Log(TimerDrunk);
             if(isDrunk)
             {
-                TimerDrunk -= Time.deltaTime;
-            }
-
-            if(TimerDrunk <= 0.0f)
-            {
-                SceneManager.LoadScene("LoseAlcohol");
+                drunkTimer += Time.deltaTime;
+                if(drunkTimer >= DrunkDuration)
+                {
+                    isDrunk = false;
+                }
             }
 
             if(isAddicted)
             {
-                TimerAddicted -= Time.deltaTime;
+                addictionIntervalTimer += Time.deltaTime;
+                if(addictionIntervalTimer >= AddictionIntervalDuration)
+                {
+                    gamePlayController.GameOverAddiction();
+                }
             }
 
-            if(TimerAddicted <= 0.0f)
+            if(gameObject.transform.position.y < 0)
             {
-                SceneManager.LoadScene("LoseCigarettes");
+                DeadByAbyss();
             }
         }
 
@@ -58,8 +61,7 @@ namespace GamePlay.Player
         {
             if (collision.transform.tag == "Hostile")
             {
-                // Touches enemy or gets hit by enemy projectile
-                // Die();
+                DeadByEnemy();
             }
             if (collision.transform.tag == "Cigarette")
             {
@@ -81,29 +83,24 @@ namespace GamePlay.Player
                 // Touches end game marker
                 // GameWin();
             }
-            else if (collision.transform.tag == "enemy")
-            {
-                Debug.Log("Touched enemy");
-                DeadByEnemy();
-            }
         }
 
         private void PickUpCig()
         {
-            if (this.CigCounter == 2)
+            if (this.numCigsCollected >= 2)
             {
                 this.isAddicted = true;
             }
-            this.CigCounter += 1;
+            this.numCigsCollected += 1;
         }
 
         private void PickUpAlcohol()
         {
-            if (this.AlcoholCounter == 0)
+            if (this.numAlcoholsCollected == 0)
             {
                 this.isDrunk = true;
             }
-            this.AlcoholCounter += 1;
+            this.numAlcoholsCollected += 1;
         }
 
         private void NextLevel()
@@ -116,6 +113,11 @@ namespace GamePlay.Player
             SceneManager.LoadScene("GameOverWin");
         }
 
+
+        private void DeadByAbyss()
+        {
+            gamePlayController.DeadByAbyss();
+        }
 
         private void DeadByEnemy()
         {

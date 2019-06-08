@@ -90,14 +90,6 @@ namespace GamePlay
         {
             if (currentState == State.Playing)
             {
-                numDeaths++;
-                Score -= 100;
-                currentState = State.Death;
-
-                // Don't let the player move while in death state.
-                player.SetActive(false);
-                // Record where the camera was at time of death so we can lerp from this position to the player.
-                lastDeathCameraLocation = MainCamera.transform.position;
                 // Where the dead body will be located.
                 Vector3 deadBodyLocation = player.transform.position;
                 // Spawn the dead body at the player's feet, this requires us to get the bottom side of the ground check box collider.
@@ -105,16 +97,21 @@ namespace GamePlay
                 GameObject deadBody = (GameObject) GameObject.Instantiate(Resources.Load("Prefabs/DeadBody"), deadBodyLocation, Quaternion.identity);
                 if(player.GetComponent<SpriteRenderer>().flipX == true)
                 {
-                    Debug.Log(deadBody.transform.localScale);
                     Vector3 deadBodyScale = deadBody.transform.localScale;
                     deadBodyScale.Scale(new Vector3(-1, 1, 1));
                     deadBody.transform.localScale = deadBodyScale;
                     Debug.Log(deadBody.transform.localScale);
                 }
-                MainCamera.enabled = false;
-                SecondaryCamera.transform.position = lastDeathCameraLocation;
-                SecondaryCamera.enabled = true;
-                player.transform.position = currentCheckpoint;
+
+                Death();
+            }
+        }
+
+        public void DeadByAbyss()
+        {
+            if(currentState == State.Playing)
+            {
+                Death();  
             }
         }
 
@@ -171,6 +168,23 @@ namespace GamePlay
                 SecondaryCamera.enabled = false;
                 MainCamera.enabled = true;
             }
+        }
+
+        private void Death()
+        {
+            numDeaths++;
+            Score -= 100;
+            currentState = State.Death;
+
+            // Don't let the player move while in death state.
+            player.SetActive(false);
+            // Record where the camera was at time of death so we can lerp from this position to the player.
+            lastDeathCameraLocation = MainCamera.transform.position;
+
+            MainCamera.enabled = false;
+            SecondaryCamera.transform.position = lastDeathCameraLocation;
+            SecondaryCamera.enabled = true;
+            player.transform.position = currentCheckpoint;
         }
 
         // Called when we first enter the play state.
