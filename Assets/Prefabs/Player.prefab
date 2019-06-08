@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3116eb2b034c6a468ab7ea8a37121ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerDrunk: 2
+  TimerAddicted: 10
 --- !u!114 &2867602215811973611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 5
   JumpForce: 2
-  JumpLimit: 2
 --- !u!114 &2867602215811973609
 MonoBehaviour:
   m_ObjectHideFlags: 0
