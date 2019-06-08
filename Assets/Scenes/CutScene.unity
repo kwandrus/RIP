@@ -338,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269606541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.2, y: -1.5, z: -1}
+  m_LocalPosition: {x: -90.2, y: -1.5, z: -1}
   m_LocalScale: {x: 11.372206, y: 11.372206, z: 11.372206}
   m_Children: []
   m_Father: {fileID: 0}
@@ -417,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701750926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.2, y: -1.5, z: -1}
+  m_LocalPosition: {x: -68, y: -1.5, z: -1}
   m_LocalScale: {x: 11.372206, y: 11.372206, z: 11.372206}
   m_Children: []
   m_Father: {fileID: 0}
@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 1005417609}
   - component: {fileID: 1005417608}
   - component: {fileID: 1005417607}
+  - component: {fileID: 1005417610}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -568,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBub: {fileID: 269606541}
-  textBub2: {fileID: 0}
+  textBub2: {fileID: 701750926}
 --- !u!212 &1005417608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -609,7 +610,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 5651646158922815434, guid: ed19dc2bb930544479187691bfb0f30e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.37}
@@ -626,12 +627,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005417606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -124.1, y: -16.4, z: -1}
+  m_LocalPosition: {x: 53.2, y: -18.5, z: -1}
   m_LocalScale: {x: 37.30465, y: 37.30465, z: 37.30465}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1005417610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005417606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0274fe5457eb8834594e2a1b9c882458, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1015595293
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +663,7 @@ GameObject:
   - component: {fileID: 1015595295}
   - component: {fileID: 1015595294}
   - component: {fileID: 1015595296}
+  - component: {fileID: 1015595297}
   m_Layer: 0
   m_Name: Player_96_0
   m_TagString: enemy
@@ -690,7 +711,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 4599724356353395433, guid: d8018fde19bde4322aa485cb6db69893,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.35, y: 0.41}
@@ -707,7 +728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015595293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.2, y: -15.7, z: 0}
+  m_LocalPosition: {x: -135, y: -17.8, z: 0}
   m_LocalScale: {x: 37, y: 37, z: 37}
   m_Children: []
   m_Father: {fileID: 0}
@@ -725,8 +746,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b79225cf0be48dc97937ad1e6e58bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBub: {fileID: 0}
+  textBub: {fileID: 269606541}
   textBub2: {fileID: 701750926}
+--- !u!95 &1015595297
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015595293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1058864933
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.68, y: -47.89}
-  m_SizeDelta: {x: 219.49, y: 34.39}
+  m_AnchoredPosition: {x: -276.2, y: -47.89}
+  m_SizeDelta: {x: 186.5, y: 34.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578628368
 MonoBehaviour:
@@ -931,7 +971,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -109.77106, w: 0}
   m_textInfo:
     textComponent: {fileID: 1578628368}
     characterCount: 0
@@ -978,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
-  fullText: I'm here to fight the bad guy.....
+  fullText: Can you escape the shadows of your past?
   textBub: {fileID: 269606541}
 --- !u!114 &1578628371
 MonoBehaviour:
@@ -1070,7 +1110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780227034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.6, y: 20.3, z: -10}
+  m_LocalPosition: {x: -46.5, y: 20.4, z: -10}
   m_LocalScale: {x: 0.69278, y: 0.69278, z: 0.69278}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1112,7 +1152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.679993, y: -47.889984}
+  m_AnchoredPosition: {x: -135, y: -47.889984}
   m_SizeDelta: {x: 219.49, y: 34.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112270778
@@ -1141,7 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
-  fullText: I am a bad guy....
+  fullText: Of course, I'm a changed man!!!
   textBub: {fileID: 701750926}
 --- !u!114 &2112270780
 MonoBehaviour:

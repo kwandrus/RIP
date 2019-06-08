@@ -15,7 +15,7 @@ public class CutSceneController : MonoBehaviour
     void Start()
     {
         // how long the cutScene will last 
-        cutSceneTime = 11f;
+        cutSceneTime = 13.3f;
         boopBeep = new Color(background.GetComponent<SpriteRenderer>().color.r,
                                                                          background.GetComponent<SpriteRenderer>().color.g,
                                                                          background.GetComponent<SpriteRenderer>().color.b,
@@ -64,7 +64,7 @@ public class CutSceneController : MonoBehaviour
         {
             background.GetComponent<SpriteRenderer>().color = boopBeep2;
         }
-        if (cutSceneTime <= 0f || Input.anyKeyDown)
+        if (cutSceneTime <= 0f || Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("GamePlay");
         }

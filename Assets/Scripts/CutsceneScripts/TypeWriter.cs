@@ -14,28 +14,42 @@ public class TypeWriter : MonoBehaviour
     private string currText;
     public GameObject textBub;
 
+    private float PostTextDelay;
+
     // Start is called before the first frame update
     void Start()
     { 
         StartCoroutine(ShowText());
+        PostTextDelay = fullText.Length / 8.6f;
     }
 
     private IEnumerator ShowText()
     {
-
-            for (int i = 0; i < fullText.Length; i++)
-            {
-                currText = fullText.Substring(0, i+1);
-                this.GetComponent<TMP_Text>().text = currText;
-                
-                // turns off text bubble and textx when sentence finishes
-                if (i == fullText.Length - 1)
-                {
-                    textBub.SetActive(false);
-                    this.GetComponent<TMP_Text>().text = "";
-                }
-
+        for (int i = 0; i < fullText.Length; i++)
+        {
+            currText = fullText.Substring(0, i+1);
+            this.GetComponent<TMP_Text>().text = currText;
             yield return new WaitForSeconds(delay);
-            }
+        }
+
+        // turns off text bubble and textx when sentence finishes
+        if (PostTextDelay < 0.0f)
+        {
+            textBub.SetActive(false);
+            this.GetComponent<TMP_Text>().text = "";
+        }
+    }
+
+    private void Update()
+    {
+        if (PostTextDelay > 0.0f)
+        {
+            PostTextDelay -= Time.deltaTime;
+        }
+        else
+        {
+            textBub.SetActive(false);
+            this.GetComponent<TMP_Text>().text = "";
+        }
     }
 }
