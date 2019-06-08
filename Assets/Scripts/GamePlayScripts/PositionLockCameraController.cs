@@ -14,7 +14,7 @@ namespace Obscura
         private float InitialCamPosy;
 
         private float CameraLowerBound = 1.5f;
-        private float CameraLeftBound = 2.0f;
+        private float CameraLeftBound = 2.5f;
 
         private void Awake()
         {
