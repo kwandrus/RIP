@@ -4,55 +4,52 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-namespace GamePlay
+
+public class GamePlayController : MonoBehaviour
 {
 
-    public class GamePlayController : MonoBehaviour
+    float Score = 0.0f;
+    public float totalTime;
+    int numDeaths = 0;
+
+    public GameObject timer;
+
+    // Start is called before the first frame update
+    void Start()
     {
 
-        float Score = 0.0f;
-        public float totalTime;
-        int numDeaths = 0;
+    }
 
-        public GameObject timer;
+    // Update is called once per frame
+    void Update()
+    {
+        totalTime -= Time.deltaTime;
+        timer.GetComponent<TMP_Text>().text = totalTime.ToString("F2");
 
-        // Start is called before the first frame update
-        void Start()
+        if (totalTime <= 0f)
         {
-
+            GameOverTime();
         }
+    }
 
-        // Update is called once per frame
-        void Update()
-        {
-            totalTime -= Time.deltaTime;
-            timer.GetComponent<TMP_Text>().text = totalTime.ToString("F2");
+    public void DeadByEnemy()
+    {
+        numDeaths++;
+        Score -= 100;
+    }
 
-            if (totalTime <= 0f)
-            {
-                GameOverTime();
-            }
-        }
+    public void GameOverTime()
+    {
+        SceneManager.LoadScene("LoseTime");
+    }
 
-        public void DeadByEnemy()
-        {
-            numDeaths++;
-            Score -= 100;
-        }
+    public void GameOverAddiction()
+    {
+        SceneManager.LoadScene("LoseCigarettes");
+    }
 
-        public void GameOverTime()
-        {
-            SceneManager.LoadScene("LoseTime");
-        }
-
-        public void GameOverAddiction()
-        {
-            SceneManager.LoadScene("LoseCigarettes");
-        }
-
-        public void GameOverAlcohol()
-        {
-            SceneManager.LoadScene("LoseAlcohol");
-        }
+    public void GameOverAlcohol()
+    {
+        SceneManager.LoadScene("LoseAlcohol");
     }
 }

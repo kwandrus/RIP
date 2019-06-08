@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6807147484730457340, guid: 9339b1ee321cb2148ad253027f97e86a,
         type: 3}
       propertyPath: m_Name
-      value: TileConcreteThin Variant 1
+      value: TileConcreteWide
       objectReference: {fileID: 0}
     - target: {fileID: 6807147484730457312, guid: 9339b1ee321cb2148ad253027f97e86a,
         type: 3}
