@@ -67,6 +67,7 @@ namespace GamePlay
                     currentState = State.Playing;
                     break;
                 case State.Playing:
+                    EnterPlayState();
                     totalTimeLeft -= Time.deltaTime;
                     if (totalTimeLeft <= 0f)
                     {
@@ -84,6 +85,7 @@ namespace GamePlay
             }
         }
 
+        // Called once when player touches enemy.
         public void DeadByEnemy()
         {
             if (currentState == State.Playing)
@@ -92,6 +94,8 @@ namespace GamePlay
                 Score -= 100;
                 currentState = State.Death;
 
+                // Don't let the player move while in death state.
+                player.SetActive(false);
                 // Record where the camera was at time of death so we can lerp from this position to the player.
                 lastDeathCameraLocation = MainCamera.transform.position;
                 // Where the dead body will be located.
@@ -136,6 +140,7 @@ namespace GamePlay
             SceneManager.LoadScene("LoseAlcohol");
         }
 
+        // Continuously updated while in the State.Death state.
         private void UpdateDeathState()
         {
             deathStateTimer += Time.deltaTime;
@@ -150,6 +155,7 @@ namespace GamePlay
             }
         }
 
+        // Continuously updated while in the State.Checkpoint state.
         private void UpdateCheckpointState()
         {
             checkpointStateTimer += Time.deltaTime;
@@ -165,6 +171,12 @@ namespace GamePlay
                 SecondaryCamera.enabled = false;
                 MainCamera.enabled = true;
             }
+        }
+
+        // Called when we first enter the play state.
+        private void EnterPlayState()
+        {
+            player.SetActive(true);
         }
     }
 }

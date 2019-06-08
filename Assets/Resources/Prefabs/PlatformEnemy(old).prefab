@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 745023723005230443}
   - component: {fileID: -551989261627130238}
   - component: {fileID: 7413629791100513850}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: PlatformEnemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -73,8 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564b9a7309e27f540baeb27f14067fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
-  limitOffset: 0
 --- !u!212 &3100885552267010723
 SpriteRenderer:
   m_ObjectHideFlags: 0
