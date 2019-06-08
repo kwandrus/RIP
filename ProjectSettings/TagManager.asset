@@ -9,6 +9,8 @@ TagManager:
   - Walkable
   - player
   - enemy
+  - Alcohol
+  - Cigarette
   layers:
   - Default
   - TransparentFX
