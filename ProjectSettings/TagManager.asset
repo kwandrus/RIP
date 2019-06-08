@@ -11,6 +11,7 @@ TagManager:
   - enemy
   - Alcohol
   - Cigarette
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
