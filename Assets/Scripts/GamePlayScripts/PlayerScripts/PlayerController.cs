@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Player.Command
+namespace GamePlay.Player
 {
     public class PlayerController : MonoBehaviour
     {
@@ -13,13 +13,17 @@ namespace Player.Command
         [SerializeField] float TimerAddicted = 10.0f;
         private bool isAddicted;
 
+        GamePlayController gamePlayController;
+        PlayerAnimation playerAnimation;
+
         private float CigCounter;
         private float AlcoholCounter;
 
-        private int DeathCounter;
-
         private void Start()
         {
+            gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
+            playerAnimation = gameObject.GetComponent<PlayerAnimation>();
+
             isDrunk = false;
             isAddicted = false;
             CigCounter = 0.0f;
@@ -77,6 +81,11 @@ namespace Player.Command
                 // Touches end game marker
                 // GameWin();
             }
+            else if (collision.transform.tag == "enemy")
+            {
+                Debug.Log("Touched enemy");
+                DeadByEnemy();
+            }
         }
 
         private void PickUpCig()
@@ -97,13 +106,6 @@ namespace Player.Command
             this.AlcoholCounter += 1;
         }
 
-        private void Die()
-        {
-            this.DeathCounter += 1;
-            // instantiate dead body
-            // respawn at nearest checkpoint
-        }
-
         private void NextLevel()
         {
             // Load next scene
@@ -114,6 +116,12 @@ namespace Player.Command
             SceneManager.LoadScene("GameOverWin");
         }
 
+
+        private void DeadByEnemy()
+        {
+            // Teleport back to last checkpoint.
+            gamePlayController.DeadByEnemy();
+        }
     }
 
 }

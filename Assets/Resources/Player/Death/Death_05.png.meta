@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 9abbe4272b9ce4bb48e1d6cd364ec8c8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5999793150303142025
+    second: Death_05_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,11 +43,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -69,9 +72,41 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Death_05_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 16
+        width: 26
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5535f9a35b409dd4c95c95140aecde52
+      internalID: 5999793150303142025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
