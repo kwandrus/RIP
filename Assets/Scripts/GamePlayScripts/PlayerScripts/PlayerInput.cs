@@ -11,7 +11,7 @@ namespace Player.Command
         private IPlayerCommand Left;
         private IPlayerCommand Jump;
 
-        Animator animator;
+        PlayerAnimation animator;
 
         KeyCode keyShoot;
         KeyCode keyRight;
@@ -25,7 +25,7 @@ namespace Player.Command
             this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
             this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
             this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
-            animator = gameObject.GetComponent<Animator>();
+            animator = gameObject.GetComponent<PlayerAnimation>();
 
             resetControls();
         }
@@ -33,15 +33,13 @@ namespace Player.Command
         // Update is called once per frame
         void Update()
         {
-            var animator = this.gameObject.GetComponent<Animator>();
 
             // Movement script utilizes [-1,1] value of Input.GetAxis() so it I only
             // needed to implement for the axis itself, not certain direction.
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonDown(this.gameObject);
-                animator.SetBool("isRunning", true);
-
+                animator.MoveLeft();
             }
             else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
@@ -50,13 +48,13 @@ namespace Player.Command
             else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") < 0.01f)
             {
                 this.Left.ButtonUp(this.gameObject);
-                animator.SetBool("isRunning", false);
+                animator.Idle();
             }
 
             if (Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonDown(this.gameObject);
-                animator.SetBool("isRunning", true);
+                animator.MoveRight();
             }
             else if (Input.GetButton("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
@@ -65,7 +63,7 @@ namespace Player.Command
             else if (Input.GetButtonUp("Horizontal") && Input.GetAxis("Horizontal") > 0.01f)
             {
                 this.Right.ButtonUp(this.gameObject);
-                animator.SetBool("isRunning", false);
+                animator.Idle();
             }
 
             if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") > 0.0f)

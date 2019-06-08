@@ -17,32 +17,26 @@ public class PlayerAnimation : MonoBehaviour
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void MoveLeft()
     {
         spriteRenderer.flipX = true;
-        animator.SetBool("Running", true);
+        animator.SetBool("isRunning", true);
     }
 
     public void MoveRight()
     {
         spriteRenderer.flipX = false;
-        animator.SetBool("Running", true);
+        animator.SetBool("isRunning", true);
     }
 
-    public void Shoot()
+    public void Idle()
     {
-
+        animator.SetBool("isRunning", false);
     }
 
-    public void Jump()
+    public void Death()
     {
-
+        animator.SetBool("isDead", true);
     }
 
 }
