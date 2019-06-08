@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class PlatformEnemyMovement : MonoBehaviour
 {
     [SerializeField]
     float Speed;
@@ -15,9 +15,12 @@ public class EnemyMovement : MonoBehaviour
     private bool IsIdle = false;
     private bool IsMovingRight = true;
 
+    private PlatformEnemyAnimation platformEnemyyAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
+        platformEnemyyAnimation = gameObject.GetComponent<PlatformEnemyAnimation>();
         Tile = gameObject.transform.parent.GetChild(1);
         BoxCollider2D tileCollider = Tile.GetComponent<BoxCollider2D>();
         leftLimit = Tile.transform.localPosition.x  + limitOffset;
@@ -34,10 +37,12 @@ public class EnemyMovement : MonoBehaviour
         else if (IsMovingRight)
         {
             MoveRight();
+            platformEnemyyAnimation.MoveRight();
         }
         else
         {
             MoveLeft();
+            platformEnemyyAnimation.MoveLeft();
         }
     }
 

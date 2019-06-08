@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564b9a7309e27f540baeb27f14067fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  Speed: 2
   limitOffset: 0
 --- !u!212 &3100885552267010723
 SpriteRenderer:
@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 3755117832516042431}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f76318e66298421a92fe96353775996, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

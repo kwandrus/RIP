@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlatformEnemyAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+
+    private void Start()
     {
-        
+        animator = gameObject.GetComponent<Animator>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        animator.SetBool("isRunning", true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MoveLeft()
     {
-        
+        spriteRenderer.flipX = true;
+    }
+
+    public void MoveRight()
+    {
+        spriteRenderer.flipX = false;
     }
 }
