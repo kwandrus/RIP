@@ -11,6 +11,7 @@ namespace Player.Command
         private float JUMP_FACTOR;
         private bool Grounded;
         private Rigidbody2D RB;
+        private PlayerAudio playerAudio;
 
         public void ButtonDown(GameObject gameobject)
         {
@@ -22,12 +23,14 @@ namespace Player.Command
 
             // Only jump if grounded.
             RB = gameobject.GetComponent<Rigidbody2D>();
+            playerAudio = gameobject.GetComponent<PlayerAudio>();
 
 
             // Adding a force to simulate a jump.
             if (Grounded)
             {
                 RB.AddForce(new Vector2(0.0f, JUMP_FACTOR), ForceMode2D.Impulse);
+                playerAudio.JumpUp();
             }
         }
         public void ButtonHold(GameObject gameobject)

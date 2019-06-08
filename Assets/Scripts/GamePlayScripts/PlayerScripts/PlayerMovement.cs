@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     float JumpForce;
 
     Rigidbody2D rigidBody2D;
+    private PlayerAudio playerAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
+        playerAudio = gameObject.GetComponent<PlayerAudio>();
     }
 
 
@@ -32,9 +34,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-
         Vector2 movement = new Vector2(0, JumpForce);
         gameObject.GetComponent<Rigidbody2D>().AddForce(movement, ForceMode2D.Impulse);
+        playerAudio.JumpUp();
     }
 
 }
