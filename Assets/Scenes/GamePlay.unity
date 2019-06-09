@@ -767,7 +767,7 @@ PrefabInstance:
     - target: {fileID: 5070421842877529510, guid: 183038dbc554d4e4c90e6f6cb20b7950,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5070421842877529510, guid: 183038dbc554d4e4c90e6f6cb20b7950,
         type: 3}
@@ -974,7 +974,7 @@ PrefabInstance:
     - target: {fileID: 5070421842877529510, guid: 183038dbc554d4e4c90e6f6cb20b7950,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5070421842877529510, guid: 183038dbc554d4e4c90e6f6cb20b7950,
         type: 3}
@@ -3004,6 +3004,8 @@ MonoBehaviour:
   MainCamera: {fileID: 217396425}
   SecondaryCamera: {fileID: 562256008}
   timer: {fileID: 11625529}
+  deathUI: {fileID: 580363103}
+  scoreUI: {fileID: 795789971}
 --- !u!4 &1727134237
 Transform:
   m_ObjectHideFlags: 0

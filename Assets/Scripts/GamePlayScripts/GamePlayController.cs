@@ -43,6 +43,8 @@ namespace GamePlay
 
         // UI
         public GameObject timer;
+        public GameObject deathUI;
+        public GameObject scoreUI; 
 
         private GameObject player;
         private Vector2 currentCheckpoint;
@@ -55,12 +57,17 @@ namespace GamePlay
             totalTimeLeft = TotalTime;
             player = GameObject.FindGameObjectWithTag("Player");
             SecondaryCamera.enabled = false;
+            Score = 1000;
         }
 
         // Update is called once per frame
         void Update()
         {
+            Score -= Time.deltaTime;
             timer.GetComponent<TMP_Text>().text = totalTimeLeft.ToString("F2");
+            deathUI.GetComponent<TMP_Text>().text = numDeaths.ToString();
+            scoreUI.GetComponent<TMP_Text>().text = Score.ToString("F1");
+
             switch (currentState)
             {
                 case State.Start:
