@@ -10,25 +10,30 @@ namespace Obscura
         //[SerializeField] public Vector3 BottomRight;
         private Camera ManagedCamera;
         public GameObject Target;
-        private float InitialCamPosx;
-        private float InitialCamPosy;
 
-        private float CameraLowerBound = 1.5f;
-        private float CameraLeftBound = 2.5f;
+        private float CameraLowerBound;
+        private float CameraLeftBound;
+        private float CameraUpperBound;
+        // We can only define this once we have an end.
+        private float CameraRightBound;
+
+        private float CameraHeight;
+        private float CameraWidth;
 
         private void Awake()
         {
             this.ManagedCamera = this.gameObject.GetComponent<Camera>();
-            InitialCamPosx = ManagedCamera.transform.position.x;
-            InitialCamPosy = ManagedCamera.transform.position.y;
-
+            CameraHeight = Camera.main.orthographicSize;
+            CameraWidth = CameraHeight * Screen.width / Screen.height;
+            CameraLowerBound = CameraHeight;
+            CameraLeftBound = CameraWidth;
+            CameraUpperBound = 4 - CameraHeight;
         }
 
         //Use the LateUpdate message to avoid setting the camera's position before
         //GameObject locations are finalized.
         void LateUpdate()
         {
-   
             var targetPosition = this.Target.transform.position;
             var cameraPosition = this.ManagedCamera.transform.position;
 
@@ -41,6 +46,10 @@ namespace Obscura
             if (cameraPosition.x < CameraLeftBound)
             {
                 cameraPosition.x = CameraLeftBound;
+            }
+            if(cameraPosition.y > CameraUpperBound)
+            {
+                cameraPosition.y = CameraUpperBound;
             }
 
             this.ManagedCamera.transform.position = cameraPosition;

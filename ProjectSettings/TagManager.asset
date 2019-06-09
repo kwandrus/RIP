@@ -15,6 +15,7 @@ TagManager:
   - enemy
   - Wall
   - EnemyBoundary
+  - deadbody
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - Wall
   - EnemyBoundaries
   - Player
-  - 
+  - NoEnemyInteraction
   - 
   - 
   - 
