@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseCigarettes.unity
     guid: 17b143b41d2254830bb464618d970cd2
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: d86d23a92e147483cadb69bdef89bee5
   m_configObjects: {}

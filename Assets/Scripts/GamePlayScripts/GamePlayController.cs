@@ -99,7 +99,7 @@ namespace GamePlay
                     winStateTimer += Time.deltaTime;
                     if(winStateTimer >= winStateDuartion)
                     {
-                        SceneManager.LoadScene("Credits");
+                        SceneManager.LoadScene("WinScene");
                     }
                     break;
             }
