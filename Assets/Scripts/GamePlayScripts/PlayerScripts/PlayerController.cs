@@ -31,7 +31,7 @@ namespace GamePlay.Player
             addictionIntervalTimer = AddictionIntervalDuration;
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if(isDrunk)
             {
@@ -72,6 +72,10 @@ namespace GamePlay.Player
             {
                 PickUpAlcohol();
                 Destroy(collision.transform.gameObject);
+            }
+            if (collision.transform.tag == "Wall")
+            {
+                this.gameObject.transform.Translate(new Vector2(-0.1f, 0.0f));
             }
             if (collision.transform.tag == "Next")
             {
