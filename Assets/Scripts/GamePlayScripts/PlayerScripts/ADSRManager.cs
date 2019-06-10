@@ -49,7 +49,8 @@ public class ADSRManager : MonoBehaviour
     }
 
 
-    void Update()
+    // FixedUpdate because we are using Physics elements like colliders
+    void FixedUpdate()
     {
         // If player is not standing still, move x position.
         if (this.CurrentPhase != Phase.None)
