@@ -51,8 +51,8 @@ namespace GamePlay.Player.Command
         }
         public void ButtonUp(GameObject gameObject)
         {
-            bool Grounded = ADSR.GetGrounded();
             ADSR = gameObject.GetComponent<ADSRManager>();
+            bool Grounded = ADSR.GetGrounded();
 
             ADSR.SetInputDirection(-Time.deltaTime);
             if (!Grounded)

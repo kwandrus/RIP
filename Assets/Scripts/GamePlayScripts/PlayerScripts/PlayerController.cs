@@ -36,7 +36,7 @@ namespace GamePlay.Player
         {
             gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
             playerAnimation = gameObject.GetComponent<PlayerAnimation>();
-            drunkTimer = DrunkDuration;
+            drunkTimer = 0;
             AddictionIntervalTimer = 0;
             RightLevelBoundary = GameObject.FindGameObjectWithTag("Endpoint").transform.position.x;
         }
@@ -58,11 +58,12 @@ namespace GamePlay.Player
             }
             if (isDrunk)
             {
-                drunkTimer += Time.deltaTime;
+                this.drunkTimer += Time.deltaTime;
                 if (drunkTimer >= DrunkDuration)
                 {
-                    isDrunk = false;
+                    this.isDrunk = false;
                     gameObject.GetComponent<Command.PlayerInput>().resetControls();
+                    this.drunkTimer = 0.0f;
                 }
 
             }
@@ -144,6 +145,7 @@ namespace GamePlay.Player
         private void PickUpAlcohol()
         {
             pickUpBool = true;
+            this.isDrunk = true;
             this.numAlcoholsCollected += 1;
             if (this.numAlcoholsCollected >= NumToAlcoholPoisoning)
             {
@@ -170,6 +172,7 @@ namespace GamePlay.Player
         {
             drunkTimer = 0.0f;
             AddictionIntervalTimer = 0.0f;
+            gameObject.GetComponent<Command.PlayerInput>().resetControls();
         }
 
         private void displayMessageCig()

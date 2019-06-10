@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace GamePlay.Player.Command
 {
@@ -10,6 +11,8 @@ namespace GamePlay.Player.Command
         private IPlayerCommand Right;
         private IPlayerCommand Left;
         private IPlayerCommand Jump;
+
+        private IPlayerCommand[] Commands;
 
         PlayerAnimation animator;
 
@@ -25,6 +28,14 @@ namespace GamePlay.Player.Command
             this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
             this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
             this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
+
+            // Array that will hold commands.
+            this.Commands = new IPlayerCommand[3];
+
+            this.Commands[0] = this.Right;
+            this.Commands[1] = this.Left;
+            this.Commands[2] = this.Jump;
+
             animator = gameObject.GetComponent<PlayerAnimation>();
 
             resetControls();
@@ -70,6 +81,14 @@ namespace GamePlay.Player.Command
             {
                 this.Jump.ButtonDown(this.gameObject);
             }
+            else if (Input.GetButton("Vertical") && Input.GetAxis("Vertical") > 0.0f)
+            {
+                this.Jump.ButtonHold(this.gameObject);
+            }
+            else if (Input.GetButtonUp("Vertical") && Input.GetAxis("Vertical") > 0.0f)
+            {
+                this.Jump.ButtonUp(this.gameObject);
+            }
 
             else if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -81,33 +100,56 @@ namespace GamePlay.Player.Command
         // Randomizes right, left, jump controls - guarantees at least one key will be different
         public void randomizeControls()
         {
-            KeyCode temp;
-            while (keyRight == KeyCode.D && keyLeft == KeyCode.A && keyJump == KeyCode.W)
-            {
-                float rand = Random.value;
-                if (rand < 0.5f)
-                {
-                    temp = keyLeft;
-                    keyLeft = keyJump;
-                    keyJump = temp;
-                }
+            
+            // while (keyRight == KeyCode.D && keyLeft == KeyCode.A && keyJump == KeyCode.W)
+            // {
+            //     float rand = Random.value;
+            //     if (rand < 0.5f)
+            //     {
+            //         temp = keyLeft;
+            //         keyLeft = keyJump;
+            //         keyJump = temp;
+            //     }
 
-                rand = Random.value;
-                if (rand < 0.5f)
-                {
-                    temp = keyRight;
-                    keyRight = keyJump;
-                    keyJump = temp;
-                }
-            }
+            //     rand = Random.value;
+            //     if (rand < 0.5f)
+            //     {
+            //         temp = keyRight;
+            //         keyRight = keyJump;
+            //         keyJump = temp;
+            //     }
+            // }
+
+            // Shuffles commands and then assigns them.
+            FisherYatesShuffle(Commands);
+            this.Right = Commands[0];
+            this.Left = Commands[1];
+            this.Jump = Commands[2];
         }
 
         public void resetControls()
         {
-            keyShoot = KeyCode.Space;
-            keyRight = KeyCode.D;
-            keyLeft = KeyCode.A;
-            keyJump = KeyCode.W;
+            // keyShoot = KeyCode.Space;
+            // keyRight = KeyCode.D;
+            // keyLeft = KeyCode.A;
+            // keyJump = KeyCode.W;
+            this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
+            this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
+            this.Jump = ScriptableObject.CreateInstance<PlayerJump>();
+        }
+
+        // https://stackoverflow.com/questions/9592166/unique-number-in-random/9593077#9593077.
+        // Shuffles elements of Commands array.
+        private static void FisherYatesShuffle<T>(T[] array)
+        {
+            System.Random r = new System.Random();
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                int j = r.Next(0, i + 1);
+                T temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+            }
         }
 
     }
