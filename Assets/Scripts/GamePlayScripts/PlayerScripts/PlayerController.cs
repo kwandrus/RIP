@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace GamePlay.Player
 {
@@ -22,6 +23,10 @@ namespace GamePlay.Player
         private bool IsAddicted = false;
         private int NumCigsCollected = 0;
 
+        [SerializeField] private Text pickUpText;
+        private float pickUpLife = 2f;
+        private bool pickUpBool = false;
+
         private float RightLevelBoundary;
 
         GamePlayController gamePlayController;
@@ -38,6 +43,19 @@ namespace GamePlay.Player
 
         private void LateUpdate()
         {
+            if (pickUpBool)
+            {
+                pickUpLife -= Time.deltaTime;
+
+                if (pickUpLife <= 0f)
+                {
+                    pickUpText.text = "";
+                    pickUpLife = 2f;
+                    pickUpBool = false; 
+                }
+
+
+            }
             if (isDrunk)
             {
                 drunkTimer += Time.deltaTime;
@@ -96,11 +114,13 @@ namespace GamePlay.Player
             if (collision.transform.tag == "Cigarette")
             {
                 PickUpCig();
+                displayMessageCig();
                 Destroy(collision.transform.gameObject);
             }
             if (collision.transform.tag == "Alcohol")
             {
                 PickUpAlcohol();
+                displayMessageAlc();
                 Destroy(collision.transform.gameObject);
             }
             if(collision.transform.tag == "Checkpoint")
@@ -111,6 +131,7 @@ namespace GamePlay.Player
 
         private void PickUpCig()
         {
+            pickUpBool = true;
             this.NumCigsCollected += 1;
             AddictionIntervalTimer = 0.0f;
             if (this.NumCigsCollected >= NumToGetAddicted && !IsAddicted)
@@ -122,6 +143,7 @@ namespace GamePlay.Player
 
         private void PickUpAlcohol()
         {
+            pickUpBool = true;
             this.numAlcoholsCollected += 1;
             if (this.numAlcoholsCollected >= NumToAlcoholPoisoning)
             {
@@ -148,6 +170,15 @@ namespace GamePlay.Player
         {
             drunkTimer = 0.0f;
             AddictionIntervalTimer = 0.0f;
+        }
+
+        private void displayMessageCig()
+        {
+            pickUpText.text = "+1 Cigarette";
+        }
+        private void displayMessageAlc()
+        {
+            pickUpText.text = "+1 Booze";
         }
     }
 
