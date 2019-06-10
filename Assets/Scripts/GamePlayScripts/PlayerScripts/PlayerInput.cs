@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player.Command
+namespace GamePlay.Player.Command
 {
     public class PlayerInput : MonoBehaviour
     {
@@ -79,7 +79,7 @@ namespace Player.Command
         }
 
         // Randomizes right, left, jump controls - guarantees at least one key will be different
-        void randomizeControls()
+        public void randomizeControls()
         {
             KeyCode temp;
             while (keyRight == KeyCode.D && keyLeft == KeyCode.A && keyJump == KeyCode.W)
@@ -102,7 +102,7 @@ namespace Player.Command
             }
         }
 
-        void resetControls()
+        public void resetControls()
         {
             keyShoot = KeyCode.Space;
             keyRight = KeyCode.D;

@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class BackToMainMenu : MonoBehaviour
 {
 
+    [SerializeField]
+    private float InputFreezeDuration;
+    private float InputFreezeTimer = 0.0f;
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
+        InputFreezeTimer += Time.deltaTime;
+        if(Input.anyKeyDown && InputFreezeTimer >= InputFreezeDuration)
         {
             SceneManager.LoadScene("MainMenu");
         }

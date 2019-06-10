@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using GamePlay.Player;
 
 namespace GamePlay
 {
@@ -15,7 +16,7 @@ namespace GamePlay
         // Death: Any actions to occur right after death is intiated happen and before we transition to the checkpoint.
         // Checkpoint: Any behavior to happen after death state and as we are transitioning to the last checkpoint.
         // GameOver: Any post-loss behavior should happen here.
-        enum State { Start, Playing, Death, Checkpoint, GameOver }
+        enum State { Start, Playing, Death, Checkpoint, GameOver, Win }
 
         [SerializeField]
         Vector2 SpawnPoint;
@@ -29,17 +30,22 @@ namespace GamePlay
         private float Score = 0.0f;
         private float totalTimeLeft;
         private int numDeaths = 0;
-        
+        private bool playerIsAddicted = false;
+
+        private float timeModifier = 1.0f;
+
         // There is probably a much better way to implement state change.
         private State currentState = State.Start;
         private float startStateDuration = 5.0f;
         private float startStateTimer = 0.0f;
-        private float deathStateDuration = 3.0f;
+        private float deathStateDuration = 1.5f;
         private float deathStateTimer = 0.0f;
         private float checkpointStateDuration = 2.0f;
         private float checkpointStateTimer = 0.0f;
         private float gameOverStateDuration = 5.0f;
         private float gameOverStateTimer = 0.0f;
+        private float winStateDuartion = 0.0f;
+        private float winStateTimer = 0.0f;
 
         // UI
         public GameObject timer;
@@ -75,7 +81,7 @@ namespace GamePlay
                     break;
                 case State.Playing:
                     EnterPlayState();
-                    totalTimeLeft -= Time.deltaTime;
+                    totalTimeLeft -= Time.deltaTime * timeModifier;
                     if (totalTimeLeft <= 0f)
                     {
                         GameOverTime();
@@ -88,6 +94,13 @@ namespace GamePlay
                     UpdateCheckpointState();
                     break;
                 case State.GameOver:
+                    break;
+                case State.Win:
+                    winStateTimer += Time.deltaTime;
+                    if(winStateTimer >= winStateDuartion)
+                    {
+                        SceneManager.LoadScene("Credits");
+                    }
                     break;
             }
         }
@@ -122,10 +135,18 @@ namespace GamePlay
             }
         }
 
-        // Should we allow for multiple checkpoints?
+        // TODO: Add win sequence/scene.
+        public void PlayerReachedEndPoint()
+        {
+            currentState = State.Win;
+            Debug.Log("win");
+        }
+
+        // Assumes that checkpoint's pivot lies at (0,0) of the sprite
         public void PlayerReachedCheckpoint(Vector2 checkpointLocation)
         {
-            currentCheckpoint = checkpointLocation;
+            Vector2 newCheckpointLocation = new Vector2(checkpointLocation.x, checkpointLocation.y + (player.GetComponent<SpriteRenderer>().size.y / 2));
+            currentCheckpoint = newCheckpointLocation;
             // We could potentially add an animation right here.
         }
 
@@ -142,6 +163,33 @@ namespace GamePlay
         public void GameOverAlcohol()
         {
             SceneManager.LoadScene("LoseAlcohol");
+        }
+
+        public void Addicted()
+        {
+            timeModifier = 0.50f;
+        }
+
+        // Called when we first enter the play state.
+        private void EnterPlayState()
+        {
+            player.SetActive(true);
+        }
+
+        private void Death()
+        {
+            numDeaths++;
+            Score -= 100;
+            currentState = State.Death;
+
+            // Don't let the player move while in death state.
+            player.SetActive(false);
+            // Record where the camera was at time of death so we can lerp from this position to the player.
+            lastDeathCameraLocation = MainCamera.transform.position;
+            MainCamera.enabled = false;
+            SecondaryCamera.transform.position = lastDeathCameraLocation;
+            SecondaryCamera.enabled = true;
+            player.transform.position = currentCheckpoint;
         }
 
         // Continuously updated while in the State.Death state.
@@ -175,29 +223,6 @@ namespace GamePlay
                 SecondaryCamera.enabled = false;
                 MainCamera.enabled = true;
             }
-        }
-
-        private void Death()
-        {
-            numDeaths++;
-            Score -= 100;
-            currentState = State.Death;
-
-            // Don't let the player move while in death state.
-            player.SetActive(false);
-            // Record where the camera was at time of death so we can lerp from this position to the player.
-            lastDeathCameraLocation = MainCamera.transform.position;
-
-            MainCamera.enabled = false;
-            SecondaryCamera.transform.position = lastDeathCameraLocation;
-            SecondaryCamera.enabled = true;
-            player.transform.position = currentCheckpoint;
-        }
-
-        // Called when we first enter the play state.
-        private void EnterPlayState()
-        {
-            player.SetActive(true);
         }
     }
 }

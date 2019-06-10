@@ -9,51 +9,63 @@ namespace GamePlay.Player
     {
         [SerializeField]
         private float DrunkDuration;
+        [SerializeField]
+        private int NumToAlcoholPoisoning;
         private float drunkTimer;
         private bool isDrunk = false;
-        private float numAlcoholsCollected = 0;
+        private int numAlcoholsCollected = 0;
         [SerializeField]
         private float AddictionIntervalDuration;
-        private float addictionIntervalTimer;
-        private bool isAddicted = false;
-        private float numCigsCollected = 0;
+        [SerializeField]
+        private int NumToGetAddicted;
+        private float AddictionIntervalTimer;
+        private bool IsAddicted = false;
+        private int NumCigsCollected = 0;
 
+        private float RightLevelBoundary;
 
         GamePlayController gamePlayController;
         PlayerAnimation playerAnimation;
-
 
         private void Start()
         {
             gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
             playerAnimation = gameObject.GetComponent<PlayerAnimation>();
             drunkTimer = DrunkDuration;
-            addictionIntervalTimer = AddictionIntervalDuration;
+            AddictionIntervalTimer = 0;
+            RightLevelBoundary = GameObject.FindGameObjectWithTag("Endpoint").transform.position.x;
         }
 
         private void LateUpdate()
         {
-            if(isDrunk)
+            if (isDrunk)
             {
                 drunkTimer += Time.deltaTime;
-                if(drunkTimer >= DrunkDuration)
+                if (drunkTimer >= DrunkDuration)
                 {
                     isDrunk = false;
+                    gameObject.GetComponent<Command.PlayerInput>().resetControls();
                 }
+
             }
 
-            if(isAddicted)
+            if (IsAddicted)
             {
-                addictionIntervalTimer += Time.deltaTime;
-                if(addictionIntervalTimer >= AddictionIntervalDuration)
+                AddictionIntervalTimer += Time.deltaTime;
+                if (AddictionIntervalTimer >= AddictionIntervalDuration)
                 {
                     gamePlayController.GameOverAddiction();
                 }
             }
 
-            if(gameObject.transform.position.y < 0)
+            if (gameObject.transform.position.y < 0.0f)
             {
                 DeadByAbyss();
+            }
+
+            if(gameObject.transform.position.x >= RightLevelBoundary)
+            {
+                gamePlayController.PlayerReachedEndPoint();
             }
         }
 
@@ -63,22 +75,10 @@ namespace GamePlay.Player
             {
                 DeadByEnemy();
             }
-            if (collision.transform.tag == "Cigarette")
-            {
-                PickUpCig();
-                Destroy(collision.transform.gameObject);
-            }
-            if (collision.transform.tag == "Alcohol")
-            {
-                PickUpAlcohol();
-                Destroy(collision.transform.gameObject);
-            }
-            /*
-            if (collision.transform.tag == "Wall")
-            {
-                this.gameObject.transform.Translate(new Vector2(-0.1f, 0.0f));
-            }
-            */
+            //if (collision.transform.tag == "Wall")
+            //{
+            //    this.gameObject.transform.Translate(new Vector2(-0.1f, 0.0f));
+            //}
             if (collision.transform.tag == "Next")
             {
                 // Touches next level marker
@@ -91,44 +91,63 @@ namespace GamePlay.Player
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.transform.tag == "Cigarette")
+            {
+                PickUpCig();
+                Destroy(collision.transform.gameObject);
+            }
+            if (collision.transform.tag == "Alcohol")
+            {
+                PickUpAlcohol();
+                Destroy(collision.transform.gameObject);
+            }
+            if(collision.transform.tag == "Checkpoint")
+            {
+                gamePlayController.PlayerReachedCheckpoint(collision.transform.position);
+            }
+        }
+
         private void PickUpCig()
         {
-            if (this.numCigsCollected >= 2)
+            this.NumCigsCollected += 1;
+            AddictionIntervalTimer = 0.0f;
+            if (this.NumCigsCollected >= NumToGetAddicted && !IsAddicted)
             {
-                this.isAddicted = true;
+                gamePlayController.Addicted();
+                IsAddicted = true;
             }
-            this.numCigsCollected += 1;
         }
 
         private void PickUpAlcohol()
         {
-            if (this.numAlcoholsCollected == 0)
-            {
-                this.isDrunk = true;
-            }
             this.numAlcoholsCollected += 1;
-        }
-
-        private void NextLevel()
-        {
-            // Load next scene
-        }
-
-        private void GameWin()
-        {
-            SceneManager.LoadScene("GameOverWin");
+            if (this.numAlcoholsCollected >= NumToAlcoholPoisoning)
+            {
+                gamePlayController.GameOverAlcohol();
+            }
+            gameObject.GetComponent<Command.PlayerInput>().randomizeControls();
         }
 
 
         private void DeadByAbyss()
         {
             gamePlayController.DeadByAbyss();
+            Death();
         }
 
         private void DeadByEnemy()
         {
             // Teleport back to last checkpoint.
             gamePlayController.DeadByEnemy();
+            Death();
+        }
+
+        private void Death()
+        {
+            drunkTimer = 0.0f;
+            AddictionIntervalTimer = 0.0f;
         }
     }
 

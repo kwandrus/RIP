@@ -12,10 +12,9 @@ TagManager:
   - Cigarette
   - Checkpoint
   - Hostile
-  - enemy
   - Wall
   - EnemyBoundary
-  - deadbody
+  - Endpoint
   layers:
   - Default
   - TransparentFX
@@ -33,8 +32,8 @@ TagManager:
   - Wall
   - EnemyBoundaries
   - Player
-  - NoEnemyInteraction
-  - 
+  - Entity
+  - Noninteractable
   - 
   - 
   - 

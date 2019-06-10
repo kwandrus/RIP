@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player.Command
+namespace GamePlay.Player.Command
 {
     public interface IPlayerCommand
     {

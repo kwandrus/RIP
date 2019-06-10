@@ -10,6 +10,10 @@ namespace Obscura
         //[SerializeField] public Vector3 BottomRight;
         private Camera ManagedCamera;
         public GameObject Target;
+        [SerializeField]
+        private float TileSize;
+        [SerializeField]
+        private float LevelBlockHeight;
 
         private float CameraLowerBound;
         private float CameraLeftBound;
@@ -27,7 +31,7 @@ namespace Obscura
             CameraWidth = CameraHeight * Screen.width / Screen.height;
             CameraLowerBound = CameraHeight;
             CameraLeftBound = CameraWidth;
-            CameraUpperBound = 4 - CameraHeight;
+            CameraUpperBound = (TileSize * LevelBlockHeight) - CameraHeight;
         }
 
         //Use the LateUpdate message to avoid setting the camera's position before

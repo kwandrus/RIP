@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Player.Command;
 
-namespace Player.Command
+namespace GamePlay.Player.Command
 {
     public class PlayerJump : ScriptableObject, IPlayerCommand
     {

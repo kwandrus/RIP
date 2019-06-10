@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
     private bool IsIdle = false;
     private bool IsMovingRight = true;
 
-
     private EnemyAnimation platformEnemyyAnimation;
 
     // Start is called before the first frame update
@@ -39,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Wall" || collision.transform.tag == "EnemyBoundary")
+        if(collision.transform.tag == "Wall" || collision.transform.tag == "EnemyBoundary" || collision.transform.tag == "Hostile")
         {
             if (IsMovingRight)
             {

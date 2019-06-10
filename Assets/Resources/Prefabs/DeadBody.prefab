@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2190157136544919753}
   - component: {fileID: -1439134303701756582}
   - component: {fileID: 7346126415565252133}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: DeadBody
-  m_TagString: deadbody
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 5399172762721609614, guid: 387988ccceb5548a7964957738946a19,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -149,7 +149,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.012096446, y: 0.075256005}
-      - {x: -0.15297244, y: 0.036683112}
+      - {x: -0.15831964, y: 0.07277653}
       - {x: -0.17587602, y: 0.013779558}
       - {x: -0.185, y: 0}
       - {x: 0.185, y: 0}
