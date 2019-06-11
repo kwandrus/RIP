@@ -23,6 +23,9 @@ namespace GamePlay.Player
         private bool IsAddicted = false;
         private int NumCigsCollected = 0;
 
+        [SerializeField]
+        private float TIME_ADD_CIG = 10.0f;
+
         [SerializeField] private Text pickUpText;
         private float pickUpLife = 2f;
         private bool pickUpBool = false;
@@ -135,6 +138,7 @@ namespace GamePlay.Player
             pickUpBool = true;
             this.NumCigsCollected += 1;
             AddictionIntervalTimer = 0.0f;
+            gamePlayController.AddTime(TIME_ADD_CIG);
             if (this.NumCigsCollected >= NumToGetAddicted && !IsAddicted)
             {
                 gamePlayController.Addicted();

@@ -170,6 +170,11 @@ namespace GamePlay
             timeModifier = 0.50f;
         }
 
+        public void AddTime(float time)
+        {
+            this.totalTimeLeft += time;
+        }
+
         // Called when we first enter the play state.
         private void EnterPlayState()
         {
