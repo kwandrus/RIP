@@ -147,6 +147,7 @@ namespace GamePlay.Player
             pickUpBool = true;
             this.isDrunk = true;
             this.numAlcoholsCollected += 1;
+            this.drunkTimer = 0.0f;
             if (this.numAlcoholsCollected >= NumToAlcoholPoisoning)
             {
                 gamePlayController.GameOverAlcohol();
