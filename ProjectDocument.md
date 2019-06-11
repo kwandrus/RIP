@@ -34,8 +34,8 @@ I created the main menu scene for our game. It's main components are the "Play" 
 **Cutscene:**
 Created the structure for what a cutscene would look like. The player and enemy moved into the scene and spoke through textbubbles. The text had a "typewriter" effect to it which was based off of [this video](https://www.youtube.com/watch?time_continue=201&v=1qbjmb_1hV4). Andrew and I worked closely together on this part of the game since narrative had a big factor in this area. 
 
-**Gameplay (Death, Score, Timer, Pickup)**
----------------------------------------
+_**Gameplay (Death, Score, Timer, Pickup)**_
+
 
 #### Death
 
