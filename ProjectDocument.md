@@ -48,7 +48,7 @@ Whenever the player picks up an alcohol bottle or cigarette, the small text appe
 
 _**Endings**_: 
 
-There are four possible ending screens that lead to the credits. The "GameOver by Time", "GameOver by Alcohol", "GameOver by Cancer", and "GameOver by Win". Each of the "Bad" gameover scenes had a red background, with a giant RIP(the title of our name) in the middle along with how they lost. These were fairly simple scenes that had small animations, color effects, and rotations. 
+There are four possible ending screens that lead to the credits. The "GameOver by Time", "GameOver by Alcohol", "GameOver by Cancer", and "GameOver by Win". Each of the "Bad" gameover scenes had a red background, with a giant RIP(the title of our name) in the middle along with how they lost. These were fairly simple scenes that had small animations, color effects, and rotations. UnityEngine.SceneManagement was very helpful for transitioning to desired scenes. 
 
 **GameOver Time:**
 When the time ran out during gameplay, the player is redirected to this scene. There is a tiny clock moving across the screen using this [script](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/gameOverScripts/timeMove.cs#L1). The transform.translate was one of the very first things we've learned in the class. 
@@ -137,11 +137,11 @@ While the mouse could’ve potentially been used as a controller based on its sc
 
 [Trailer](https://youtu.be/lx1-ISlhUis).
 
-[Press Kit] ()
+[Press Kit] (https://github.com/kyle-andrus/RIP/blob/master/PressKit/presskitty.md).
 
-For press kit:
-[Source 1](http://www.aegisthegame.com/press-kit.html)
-[Source 2](https://www.youtube.com/watch?v=0mqnz9QfFck)
+These are some sources that gave me inspiration for my press kit: 
+[Source 1](http://www.aegisthegame.com/press-kit.html).
+[Source 2](https://www.youtube.com/watch?v=0mqnz9QfFck).
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
