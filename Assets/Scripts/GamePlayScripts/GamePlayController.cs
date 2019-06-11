@@ -69,7 +69,10 @@ namespace GamePlay
         // Update is called once per frame
         void Update()
         {
-            Score -= Time.deltaTime;
+            if (currentState == State.Playing)
+            {
+                Score -= Time.deltaTime;
+            }
             timer.GetComponent<TMP_Text>().text = totalTimeLeft.ToString("F2");
             deathUI.GetComponent<TMP_Text>().text = numDeaths.ToString();
             scoreUI.GetComponent<TMP_Text>().text = Score.ToString("F1");
