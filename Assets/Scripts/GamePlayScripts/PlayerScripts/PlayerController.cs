@@ -141,7 +141,7 @@ namespace GamePlay.Player
             pickUpBool = true;
             this.NumCigsCollected += 1;
             AddictionIntervalTimer = 0.0f;
-           // gamePlayController.AddTime(TIME_ADD_CIG);
+            gamePlayController.AddTime(TIME_ADD_CIG);
             if (this.NumCigsCollected >= NumToGetAddicted && !IsAddicted)
             {
                 gamePlayController.Addicted();

@@ -108,6 +108,11 @@ namespace GamePlay
             }
         }
 
+        public void AddTime(float time)
+        {
+            this.totalTimeLeft += time;
+        }
+
         // Called once when player touches enemy.
         public void DeadByEnemy()
         {

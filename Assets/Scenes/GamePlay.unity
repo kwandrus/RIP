@@ -3866,12 +3866,12 @@ PrefabInstance:
     - target: {fileID: 493893807576293106, guid: 950332a65b433b9488761f15f6f35069,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46
+      value: 0.625
       objectReference: {fileID: 0}
     - target: {fileID: 493893807576293106, guid: 950332a65b433b9488761f15f6f35069,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.92
+      value: 0.683
       objectReference: {fileID: 0}
     - target: {fileID: 493893807576293106, guid: 950332a65b433b9488761f15f6f35069,
         type: 3}
@@ -3931,7 +3931,7 @@ PrefabInstance:
     - target: {fileID: 493893807576293070, guid: 950332a65b433b9488761f15f6f35069,
         type: 3}
       propertyPath: TIME_ADD_CIG
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 950332a65b433b9488761f15f6f35069, type: 3}
