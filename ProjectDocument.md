@@ -88,10 +88,15 @@ On the other hand, items and checkpoints are treated as [triggers](https://githu
 ## Animation and Visuals
 
 **List your assets including their sources, and licenses.**
+
 [Carboard box, alcohol bottle](https://opengameart.org/content/recycle-items-set) ; CC3.0-by 3.0 license, Author - Clint Bellanger
+
 [Player (man with pony tail)](https://hugues-laborde.itch.io/cartoon-side-scroller-character) ; CC3.0-by 3.0 license, Author - Hugues Laborde
+
 [Shadow character](https://hugues-laborde.itch.io/pack-character-pixel-art-05) ; CC3.0-by 3.0 license, Author - Hugues Laborde
+
 [Cigarette](https://opengameart.org/content/various-inventory-24-pixel-icon-set) ; CC3.0-by 3.0 license, Author - OceansDream
+
 [Wall and Ground Tiles](https://assetstore.unity.com/packages/2d/environments/free-8-bit-pixel-pack-79530?fbclid=IwAR0IuR3Pkv3mrRmjArXrsPy2X7mUIN8IHpoUNtINgbr1-UNhEVKS-YaWBLU) ; CC0 license
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
@@ -155,12 +160,18 @@ In addition to state-keeping, I programmed the GamePlayController to contain [su
 ## Audio
 
 **List your assets including their sources, and licenses.**
-Grunt - Death: https://opengameart.org/content/grunt ; CC-by 3.0 license, Author: n3b
-Jump Landing: https://opengameart.org/content/jump-landing-sound ; CC0 license
-Jump: https://freesound.org/people/cabled_mess/sounds/350906/ ; CC0 license
-GamePlay Song - Imaginary Dystopia: https://opengameart.org/content/imaginary-dystopia ; CC0 license
-CutScene Song - Nosferatus House Party: https://opengameart.org/content/nosferatus-house-party ; CC0 license
-Picking Up Items: https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116?fbclid=IwAR11wXyhT3HET8lP-AJ3_D4gO9OAOuR2x_9JA0ec3HkkOkDs2yq-UsnI5RA ; CC0 license
+
+[Grunt - Death](https://opengameart.org/content/grunt) ; CC-by 3.0 license, Author: n3b
+
+[Jump Landing](https://opengameart.org/content/jump-landing-sound) ; CC0 license
+
+[Jump](https://freesound.org/people/cabled_mess/sounds/350906/); CC0 license
+
+[GamePlay Song - Imaginary Dystopia](https://opengameart.org/content/imaginary-dystopia) ; CC0 license
+
+[CutScene Song - Nosferatus House Party](https://opengameart.org/content/nosferatus-house-party) ; CC0 license
+
+[Picking Up Items](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116?fbclid=IwAR11wXyhT3HET8lP-AJ3_D4gO9OAOuR2x_9JA0ec3HkkOkDs2yq-UsnI5RA) ; CC0 license
 
 **Describe the implementation of your audio system.**
 The audio in our game was mainly focused around adding assets to the player and the songs to each scene. For organization, I wrote a separate script for each asset that I was developing sound for, which included the various sounds that corresponded to the Player in the GamePlay scene and the background songs for the beginning cutscene and the GamePlay scene (3 scripts). Caleb (Game Feel) also found audio - the sound that cues after picking up an item.
