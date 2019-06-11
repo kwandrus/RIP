@@ -77,22 +77,17 @@ namespace GamePlay.Player.Command
                 animator.Idle();
             }
 
-            if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") > 0.0f)
+            if ((Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") > 0.0f) || (Input.GetButtonDown("Jump")))
             {
                 this.Jump.ButtonDown(this.gameObject);
             }
-            else if (Input.GetButton("Vertical") && Input.GetAxis("Vertical") > 0.0f)
+            else if ((Input.GetButton("Vertical") && Input.GetAxis("Vertical") > 0.0f) || (Input.GetButton("Jump")))
             {
                 this.Jump.ButtonHold(this.gameObject);
             }
-            else if (Input.GetButtonUp("Vertical") && Input.GetAxis("Vertical") > 0.0f)
+            else if ((Input.GetButtonUp("Vertical") && Input.GetAxis("Vertical") > 0.0f) || (Input.GetButtonUp("Jump")))
             {
                 this.Jump.ButtonUp(this.gameObject);
-            }
-
-            else if (Input.GetKeyDown(KeyCode.Space))
-            {
-                this.Jump.ButtonDown(this.gameObject);
             }
 
         }
