@@ -388,7 +388,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1685803246}
-        m_MethodName: SwitchToGamePlay
+        m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5033,13 +5033,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1685803241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d5f3058f940a74ba64c19a2444cc92, type: 3}
+  m_Script: {fileID: 11500000, guid: a165d90d64ec768498af3a3ed36700a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartButton: {fileID: 77756881}
-  CreditsButton: {fileID: 77756881}
-  Camera: {fileID: 217396423}
-  SceneLight: {fileID: 0}
 --- !u!1001 &1704698654
 PrefabInstance:
   m_ObjectHideFlags: 0
