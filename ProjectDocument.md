@@ -137,12 +137,15 @@ While the mouse could’ve potentially been used as a controller based on its sc
 
 [Trailer](https://youtu.be/lx1-ISlhUis).
 
-[Press Kit] (https://github.com/kyle-andrus/RIP/blob/master/PressKit/presskitty.md).
+[Press Kit](https://github.com/kyle-andrus/RIP/blob/master/PressKit/presskitty.md) 
 
 These are some sources that gave me inspiration for my press kit: 
 [Source 1](http://www.aegisthegame.com/press-kit.html).
 [Source 2](https://www.youtube.com/watch?v=0mqnz9QfFck).
 
+For my trailer, I wanted to start it with a cutscene that had some relevant dialogue and then be able to end the trailer with another cutscene that wraps up the whole game. I then put in some gameplay as the meat of my trailer, showing the viewers cool features, different end screens, and a lot of death(which is a main theme for our game). The multiple ways to die was showcased throughout the trailer, making the game seem very difficult (which may entice some of the viewers looking for a challenge). The audio that was chosen is different from the actual gameplay because I thought it fit the trailer much better; music really does wonders to a video. 
+
+As for my press kit, I had an about us section, lore for the game, screenshots, characters, and a team page. I also had a section on the left side of the first page that gave some information about the developer, publisher, price, etc. about the game. My color scheme for the press kit matched actual game itself, with purple being the primary color that was used. The screenshots I chose were very relevant to the game - the overall story, avoiding creatures, and of course, death. I gave descriptions for each of these elements. I also threw in the main characters for the game and gave each one of them some personality. My favorite page in the press kit is the "Team" page which showed all of us and what we contributed to the game. It was really bittersweet completing this page because of all the hardwork we put in and how the game finally turned out. 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
 
