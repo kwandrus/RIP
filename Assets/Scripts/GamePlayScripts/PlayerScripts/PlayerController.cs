@@ -104,16 +104,6 @@ namespace GamePlay.Player
             //{
             //    this.gameObject.transform.Translate(new Vector2(-0.1f, 0.0f));
             //}
-            if (collision.transform.tag == "Next")
-            {
-                // Touches next level marker
-                // Next Level();
-            }
-            if (collision.transform.tag == "End")
-            {
-                // Touches end game marker
-                // GameWin();
-            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -121,12 +111,14 @@ namespace GamePlay.Player
             if (collision.transform.tag == "Cigarette")
             {
                 PickUpCig();
+                GetComponent<PlayerAudio>().PickUpItem();
                 displayMessageCig();
                 Destroy(collision.transform.gameObject);
             }
             if (collision.transform.tag == "Alcohol")
             {
                 PickUpAlcohol();
+                GetComponent<PlayerAudio>().PickUpItem();
                 displayMessageAlc();
                 Destroy(collision.transform.gameObject);
             }
