@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Obscura
+namespace GamePlay.Player
 {
     public class PositionLockCameraController : MonoBehaviour
     {
@@ -23,6 +23,7 @@ namespace Obscura
 
         private float CameraHeight;
         private float CameraWidth;
+        private ItemWobbleAnimation wobble;
 
         private void Awake()
         {
@@ -34,12 +35,18 @@ namespace Obscura
             CameraUpperBound = (TileSize * LevelBlockHeight) - CameraHeight;
         }
 
+        private void Start()
+        {
+            wobble = this.GetComponent<ItemWobbleAnimation>();
+        }
         //Use the LateUpdate message to avoid setting the camera's position before
         //GameObject locations are finalized.
         void LateUpdate()
         {
+
             var targetPosition = this.Target.transform.position;
             var cameraPosition = this.ManagedCamera.transform.position;
+            var cameraRotation = this.ManagedCamera.transform.rotation;
 
             cameraPosition = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
 
@@ -56,8 +63,18 @@ namespace Obscura
                 cameraPosition.y = CameraUpperBound;
             }
 
-            this.ManagedCamera.transform.position = cameraPosition;
+            if (Target.GetComponent<PlayerController>().getDrunkState())
+            {
+                wobble.enabled = true;
+            }
+            else
+            {
+                wobble.enabled = false;
+                cameraRotation.z = 0;
+            }
 
+            this.ManagedCamera.transform.position = cameraPosition;
+            this.ManagedCamera.transform.rotation = cameraRotation;
         }
 
     }

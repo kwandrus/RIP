@@ -183,6 +183,11 @@ namespace GamePlay.Player
         {
             pickUpText.text = "+1 Booze";
         }
+
+        public bool getDrunkState()
+        {
+            return isDrunk;
+        }
     }
 
 }
