@@ -37,32 +37,32 @@ Created the structure for what a cutscene would look like. The player and enemy 
 _**Gameplay (Death, Score, Timer, Pickup)**_: 
 A lot of this was learning through trial and error. I was able to grasp a bit of how the canvas system worked through the Pirate project, but what really gave me the most knowledge on the UI interface was just through a lot of mistakes. Some challenging parts of this were differentiating between UI objects and regular ones, positioning these items correctly, and being able to bring it together to create something intuitive and aesthetically pleasing. Most of the HUD elements can be seen in the [gamePlayController](https://github.com/kyle-andrus/RIP/blob/11adb4d1ab86b13b8fd79ccb757365a40eaba350/Assets/Scripts/GamePlayScripts/GamePlayController.cs#L1) script. We wanted the HUD to be visible and clear for the players, so placing all of these components at the very top of the screen was the first thing I thought of. Also, I wanted to match the "pixely" theme we had going on throughout the game, so all of the fonts and images I used also had to abide by these rules. The gameplay scene was where I was really able to strengthen my Unity knowledge; I was able to see how all the scripts and objects worked together. Being able to pull necessary components from each one and using them accordingly, I not only gained more expertise in UI, but also in every other role as well. 
 
-**Death**
+**Death:**
 Whenever the player dies, the death counter goes up by one. The code for the death counter is take the number of deaths the player currently has, and then change the text component of the text object to match what has happened. This can be seen through this portion of the [script](https://github.com/kyle-andrus/RIP/blob/11adb4d1ab86b13b8fd79ccb757365a40eaba350/Assets/Scripts/GamePlayScripts/GamePlayController.cs#L77). Next to the death counter, there's a cute little animated skull that gives the "it's okay if you die" vibe to the players. From this, I briefly touched over some of the animation and game feel aspects that was taught in this class. 
 
-**Score and Timer**
+**Score and Timer:**
 The score of the player continously decreases relative to the time. When the player dies, both the score and time stops ticking down. Both of these are implemented using Time.deltatime, decreasing by one every second only when the player is in a "playing" state. The script for both of these is found in the [gamePlayController](https://github.com/kyle-andrus/RIP/blob/11adb4d1ab86b13b8fd79ccb757365a40eaba350/Assets/Scripts/GamePlayScripts/GamePlayController.cs#L76). Every time the player dies, the score decreases by 100 each time. Once the time hits 0, the game transitions to the "Time Up" game over scene. 
 
-**Pickup**
+**Pickup:**
 Whenever the player picks up an alcohol bottle or cigarette, the small text appears on the screen displaying "+1 (whatever item)". This was done in various parts of the playerController script, which can be seen [here](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L49), [here](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L186), and [here](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L124). This small addition helps the players solidify the fact he/she just picked up something and makes it easier for them to keep track of how many they have already picked up. One of the cooler pick-up effects comes from the alcohol. I threw in a camera shake-up that mimics what it's like to be drunk using Caleb's [itemWobble](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/ItemWobbleAnimation.cs#L1) script and played around with the animation curve. Some really cool effects can be achieved with different patterns in the lines. 
 
 _**Endings**_: 
 
 There are four possible ending screens that lead to the credits. The "GameOver by Time", "GameOver by Alcohol", "GameOver by Cancer", and "GameOver by Win". Each of the "Bad" gameover scenes had a red background, with a giant RIP(the title of our name) in the middle along with how they lost. These were fairly simple scenes that had small animations, color effects, and rotations. 
 
-**GameOver Time**
+**GameOver Time:**
 When the time ran out during gameplay, the player is redirected to this scene. There is a tiny clock moving across the screen using this [script](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/gameOverScripts/timeMove.cs#L1). The transform.translate was one of the very first things we've learned in the class. 
 
-**GameOver Alcohol**
+**GameOver Alcohol:**
 When the player dies from overconsumption of alcohol, he/she is redirected to this scene. It starts to rain alcohol via this [script](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/gameOverScripts/alcoholRain.cs#L1). This was also from project 1, making use of object instantiation/destruction and position. 
 
-**GameOver Cancer** 
+**GameOver Cancer:** 
 When the player gets addicted to cigarettes, he/she is redirected to this scene. There was a bit of animation in this scene that I played around with. 
 
-**GameOver Win**
+**GameOver Win:**
 If the player reaches the end, they are first redirected to a small cutscene, and then this scene. Here, the color of the background periodically changes and the title moves around. It's like a party simulator. This uses the getComponent, Color, and Random aspects of Unity. [Script](https://github.com/kyle-andrus/RIP/blob/54a9fb59bf9f1c39347130961945c9b7bbe644ac/Assets/Scripts/backColorChange.cs#L1). 
 
-**Credits**
+**Credits:**
 In the credits, all of our names are shown in the middle of the screen one at a time. Camera position and Vector3.MoveTowards were useful here. There were 5 scripts, here is [one](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/CreditsScripts/tonyController.cs#L1) of them. I got the idea of MoveTowards from [here](https://answers.unity.com/questions/570573/how-do-i-slowly-translate-a-object-to-a-other-obje.html). 
 
 
