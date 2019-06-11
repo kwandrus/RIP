@@ -46,6 +46,27 @@ The score of the player continously decreases relative to the time. When the pla
 #### Pickup 
 Whenever the player picks up an alcohol bottle or cigarette, the small text appears on the screen displaying "+1 (whatever item)". This was done in various parts of the playerController script, which can be seen [here](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L49), [here](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L186), and [here](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L124). This small addition helps the players solidify the fact he/she just picked up something and makes it easier for them to keep track of how many they have already picked up. One of the cooler pick-up effects comes from the alcohol. I threw in a camera shake-up that mimics what it's like to be drunk using Caleb's [itemWobble](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/GamePlayScripts/ItemWobbleAnimation.cs#L1) script and played around with the animation curve. Some really cool effects can be achieved with different patterns in the lines. 
 
+_**Endings**_: 
+
+There are four possible ending screens that lead to the credits. The "GameOver by Time", "GameOver by Alcohol", "GameOver by Cancer", and "GameOver by Win". Each of the "Bad" gameover scenes had a red background, with a giant RIP(the title of our name) in the middle along with how they lost. These were fairly simple scenes that had small animations, color effects, and rotations. 
+
+#### GameOver Time
+When the time ran out during gameplay, the player is redirected to this scene. There is a tiny clock moving across the screen using this [script](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/gameOverScripts/timeMove.cs#L1). The transform.translate was one of the very first things we've learned in the class. 
+
+#### GameOver Alcohol
+When the player dies from overconsumption of alcohol, he/she is redirected to this scene. It starts to rain alcohol via this [script](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/gameOverScripts/alcoholRain.cs#L1). This was also from project 1, making use of object instantiation/destruction and position. 
+
+#### GameOver Cancer 
+When the player gets addicted to cigarettes, he/she is redirected to this scene. There was a bit of animation in this scene that I played around with. 
+
+#### GameOver Win
+
+
+#### Credits
+
+
+
+
 ## Movement/Physics
 
 **Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your own movement scripts that do not use the phyics system?**
