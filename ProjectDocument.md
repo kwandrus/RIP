@@ -123,7 +123,7 @@ On the other hand, items and checkpoints are treated as [triggers](https://githu
 
 ## Press Kit and Trailer
 
-**Include links to your presskit materials and trailer.**
+[Trailer](https://youtu.be/lx1-ISlhUis)
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
