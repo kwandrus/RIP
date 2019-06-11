@@ -102,7 +102,7 @@ namespace GamePlay
                     winStateTimer += Time.deltaTime;
                     if(winStateTimer >= winStateDuartion)
                     {
-                        SceneManager.LoadScene("WinScene");
+                        SceneManager.LoadScene("EndingCutscene");
                     }
                     break;
             }
