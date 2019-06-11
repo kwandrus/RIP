@@ -3,7 +3,7 @@
 ## Summary ##
 
 You try to escape your past self. A time of addiction and regret.
-Yet the shadow of your past continues to pursue you, in hopes of being able to finally take over, once and for all. Blessed with multiple lives, but a finite amount of time, you have to maneuver through creatures of the dark, avoid pitfalls, and resist the temptation revert back into your previous self. 
+Yet the shadow of your past continues to pursue you, in hopes of being able to finally take over, once and for all. Blessed with multiple lives, but a finite amount of time, you have to maneuver through creatures of the dark, avoid pitfalls, and resist the temptation of reverting back to your previous self. 
 
 ## Gameplay explanation ##
 
@@ -34,12 +34,17 @@ I created the main menu scene for our game. It's main components are the "Play" 
 **Cutscene:**
 Created the structure for what a cutscene would look like. The player and enemy moved into the scene and spoke through textbubbles. The text had a "typewriter" effect to it which was based off of [this video](https://www.youtube.com/watch?time_continue=201&v=1qbjmb_1hV4). Andrew and I worked closely together on this part of the game since narrative had a big factor in this area. 
 
-_**Gameplay (Death, Score, Timer, Pickup)**_
-
+_**Gameplay (Death, Score, Timer, Pickup)**_: 
+A lot of this was learning through trial and error. I was able to grasp a bit of how the canvas system worked through the Pirate project, but what really gave me the most knowledge on the UI interface was just through a lot of mistakes. Some challenging parts of this were differentiating between UI objects and regular ones, positioning these items correctly, and being able to bring it together to create something intuitive and aesthetically pleasing. 
 
 #### Death
 
+
 #### Score
+
+#### Timer
+
+#### Pickup 
 
 ## Movement/Physics
 
