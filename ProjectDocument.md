@@ -2,7 +2,8 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+You try to escape your past self. A time of addiction and regret.
+Yet the shadow of your past continues to pursue you, in hopes of being able to finally take over, once and for all. Blessed with multiple lives, but a finite amount of time, you have to maneuver through creatures of the dark, avoid pitfalls, and resist the temptation revert back into your previous self. 
 
 ## Gameplay explanation ##
 
@@ -26,7 +27,8 @@ You should replay any **bold text** with your own relevant information. Liberall
 
 ## User Interface
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+**Main Menu**
+I created the main menu scene for our game. It's main components are the "Play" and "Credits" buttons that lead to the appropriate scenes, the title, and an auto scrolling camera that pans the background image. I made use of TextMeshPro from the asset store which allowed me to further customize the text (cool font and gradient options). The buttons have a subtle highlight when the cursor moves over it and reverses the text as well. The [auto scrolling camera](https://github.com/kyle-andrus/RIP/blob/8e5a8976b6a033d1d859e65cc8830f5375600c47/Assets/Scripts/menuScripts/cameraScroll.cs#L1) eventually stops when the end of the background image is reached.  
 
 ## Movement/Physics
 
