@@ -50,7 +50,7 @@ namespace GamePlay
         // UI
         public GameObject timer;
         public GameObject deathUI;
-        public GameObject scoreUI; 
+        public GameObject scoreUI;
 
         private GameObject player;
         private Vector2 currentCheckpoint;
@@ -102,7 +102,7 @@ namespace GamePlay
                     break;
                 case State.Win:
                     winStateTimer += Time.deltaTime;
-                    if(winStateTimer >= winStateDuartion)
+                    if (winStateTimer >= winStateDuartion)
                     {
                         SceneManager.LoadScene("EndingCutscene");
                     }
@@ -110,8 +110,20 @@ namespace GamePlay
             }
         }
 
+        private void OnEnable()
+        {
+            Player.PlayerController.OnDeathAbyss += DeathByAbyss;
+            Player.PlayerController.OnDeathEnemy += DeathByEnemy;
+            Player.PlayerController.OnPlayerReachedEndpoint += PlayerReachedEndpoint; 
+        }
+
+        public void AddTime(float time)
+        {
+            this.totalTimeLeft += time;
+        }
+
         // Called once when player touches enemy.
-        public void DeadByEnemy()
+        public void DeathByEnemy()
         {
             if (currentState == State.Playing)
             {
@@ -120,31 +132,29 @@ namespace GamePlay
                 // Spawn the dead body at the player's feet, this requires us to get the bottom side of the ground check box collider.
                 deadBodyLocation.y = player.transform.Find("GroundCheck").position.y - player.GetComponentInChildren<BoxCollider2D>().size.y / 2;
                 GameObject deadBody = (GameObject) GameObject.Instantiate(Resources.Load("Prefabs/DeadBody"), deadBodyLocation, Quaternion.identity);
-                if(player.GetComponent<SpriteRenderer>().flipX == true)
+                if (player.GetComponent<SpriteRenderer>().flipX == true)
                 {
                     Vector3 deadBodyScale = deadBody.transform.localScale;
                     deadBodyScale.Scale(new Vector3(-1, 1, 1));
                     deadBody.transform.localScale = deadBodyScale;
-                    Debug.Log(deadBody.transform.localScale);
                 }
-
                 Death();
             }
         }
 
-        public void DeadByAbyss()
+        public void DeathByAbyss()
         {
             if (currentState == State.Playing)
             {
-                Death();  
+                Death();
+                SecondaryCamera.GetComponent<ScreenShakeEffect>().Activate();
             }
         }
 
         // TODO: Add win sequence/scene.
-        public void PlayerReachedEndPoint()
+        public void PlayerReachedEndpoint()
         {
             currentState = State.Win;
-            Debug.Log("win");
         }
 
         // Assumes that checkpoint's pivot lies at (0,0) of the sprite
@@ -173,11 +183,6 @@ namespace GamePlay
         public void Addicted()
         {
             timeModifier = 0.50f;
-        }
-
-        public void AddTime(float time)
-        {
-            this.totalTimeLeft += time;
         }
 
         // Called when we first enter the play state.
@@ -209,7 +214,7 @@ namespace GamePlay
             deathStateTimer += Time.deltaTime;
             if (deathStateTimer < deathStateDuration)
             {
-                
+
             }
             else
             {

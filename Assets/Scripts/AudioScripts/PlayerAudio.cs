@@ -7,6 +7,7 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] private AudioSource jumpUpSound;
     [SerializeField] private AudioSource jumpLandSound;
     [SerializeField] private AudioSource deathGruntSound;
+    [SerializeField] private AudioSource pickUpItemSound;
 
     public void JumpUp()
     {
@@ -32,5 +33,10 @@ public class PlayerAudio : MonoBehaviour
 
         // Don't let the player move while in death state.
         player.SetActive(false);
+    }
+
+    public void PickUpItem()
+    {
+        pickUpItemSound.Play();
     }
 }

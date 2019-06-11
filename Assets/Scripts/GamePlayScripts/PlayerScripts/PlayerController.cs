@@ -32,6 +32,13 @@ namespace GamePlay.Player
 
         private float RightLevelBoundary;
 
+        public delegate void DeathAbyss();
+        public static event DeathAbyss OnDeathAbyss;
+        public delegate void DeathEnemy();
+        public static event DeathEnemy OnDeathEnemy;
+        public delegate void PlayerReachedEndpoint();
+        public static event PlayerReachedEndpoint OnPlayerReachedEndpoint;
+
         GamePlayController gamePlayController;
         PlayerAudio playerAudio;
 
@@ -55,7 +62,7 @@ namespace GamePlay.Player
                 {
                     pickUpText.text = "";
                     pickUpLife = 2f;
-                    pickUpBool = false; 
+                    pickUpBool = false;
                 }
 
 
@@ -84,12 +91,13 @@ namespace GamePlay.Player
             if (gameObject.transform.position.y < 0.0f)
             {
                 playerAudio.DeathGrunt();
-                DeadByAbyss();
+                OnDeathAbyss();
+                Death();
             }
 
             if(gameObject.transform.position.x >= RightLevelBoundary)
             {
-                gamePlayController.PlayerReachedEndPoint();
+                OnPlayerReachedEndpoint();
             }
         }
 
@@ -100,23 +108,14 @@ namespace GamePlay.Player
                 if (!isDrunk)
                 {
                     playerAudio.DeathGrunt();
-                    DeadByEnemy();
+                    OnDeathEnemy();
+                    Death();
                 }
             }
             //if (collision.transform.tag == "Wall")
             //{
             //    this.gameObject.transform.Translate(new Vector2(-0.1f, 0.0f));
             //}
-            if (collision.transform.tag == "Next")
-            {
-                // Touches next level marker
-                // Next Level();
-            }
-            if (collision.transform.tag == "End")
-            {
-                // Touches end game marker
-                // GameWin();
-            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -124,12 +123,14 @@ namespace GamePlay.Player
             if (collision.transform.tag == "Cigarette")
             {
                 PickUpCig();
+                GetComponent<PlayerAudio>().PickUpItem();
                 displayMessageCig();
                 Destroy(collision.transform.gameObject);
             }
             if (collision.transform.tag == "Alcohol")
             {
                 PickUpAlcohol();
+                GetComponent<PlayerAudio>().PickUpItem();
                 displayMessageAlc();
                 Destroy(collision.transform.gameObject);
             }
@@ -163,20 +164,6 @@ namespace GamePlay.Player
                 gamePlayController.GameOverAlcohol();
             }
             gameObject.GetComponent<Command.PlayerInput>().randomizeControls();
-        }
-
-
-        private void DeadByAbyss()
-        {
-            gamePlayController.DeadByAbyss();
-            Death();
-        }
-
-        private void DeadByEnemy()
-        {
-            // Teleport back to last checkpoint.
-            gamePlayController.DeadByEnemy();
-            Death();
         }
 
         private void Death()

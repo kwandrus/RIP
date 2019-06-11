@@ -12,7 +12,7 @@ public class MenuButtonsController : MonoBehaviour
     [SerializeField]
     public GameObject OptionsButton;
     [SerializeField]
-    public GameObject QuitButton;
+    public GameObject CreditsButton;
     [SerializeField]
     GameObject Camera;
     [SerializeField]
@@ -58,10 +58,12 @@ public class MenuButtonsController : MonoBehaviour
         SceneToLoad = "Options";
     }
 
-    public void Quit()
+    public void SwitchToCredits()
     {
-        Debug.Log("Quitting game");
-        Application.Quit();
+        //Debug.Log("Quitting game");
+        CurrentState = State.Animation;
+        SceneToLoad = "Credits";
+        //Application.Quit();
     }
 
     private void UpdateAnimation()
@@ -75,13 +77,13 @@ public class MenuButtonsController : MonoBehaviour
 
         PlayButton.transform.Translate(buttonMovementVectorLeft);
         OptionsButton.transform.Translate(buttonMovementVectorRight);
-        QuitButton.transform.Translate(buttonMovementVectorRight);
+        CreditsButton.transform.Translate(buttonMovementVectorRight);
     }
 
     private void DisableButtons()
     {
         PlayButton.GetComponent<Button>().interactable = false;
         OptionsButton.GetComponent<Button>().interactable = false;
-        QuitButton.GetComponent<Button>().interactable = false;
+        CreditsButton.GetComponent<Button>().interactable = false;
     }
 }

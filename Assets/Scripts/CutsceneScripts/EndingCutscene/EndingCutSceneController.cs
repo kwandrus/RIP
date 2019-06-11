@@ -14,7 +14,7 @@ public class EndingCutSceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cutSceneTime = 16.3f;
+        cutSceneTime = 17.5f;
         fadingColor = new Color(background.GetComponent<SpriteRenderer>().color.r,
                                                                  background.GetComponent<SpriteRenderer>().color.g,
                                                                  background.GetComponent<SpriteRenderer>().color.b,
@@ -27,9 +27,9 @@ public class EndingCutSceneController : MonoBehaviour
     {
         cutSceneTime -= Time.deltaTime;
 
-        if(cutSceneTime < 2.0f)
+        if(cutSceneTime < 3f)
         {
-            fadingFactor -= Time.deltaTime * 0.1f;
+            fadingFactor -= Time.deltaTime * 0.05f;
             fadingColor = new Color(background.GetComponent<SpriteRenderer>().color.r * fadingFactor,
                                                          background.GetComponent<SpriteRenderer>().color.g * fadingFactor,
                                                          background.GetComponent<SpriteRenderer>().color.b * fadingFactor,
@@ -37,7 +37,7 @@ public class EndingCutSceneController : MonoBehaviour
             background.GetComponent<SpriteRenderer>().color = fadingColor;
         }
 
-        if (cutSceneTime <= 0f || Input.GetKeyDown(KeyCode.Space))
+        if (cutSceneTime <= 0f || Input.GetButtonDown("Jump"))
         {
             SceneManager.LoadScene("WinScene");
         }
