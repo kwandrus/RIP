@@ -2,7 +2,8 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+You try to escape your past self. A time of addiction and regret.
+Yet the shadow of your past continues to pursue you, in hopes of being able to finally take over, once and for all. Blessed with multiple lives, but a finite amount of time, you have to maneuver through creatures of the dark, avoid pitfalls, and resist the temptation of reverting back to your previous self. 
 
 ## Gameplay explanation ##
 
@@ -26,7 +27,23 @@ You should replay any **bold text** with your own relevant information. Liberall
 
 ## User Interface
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+**Main Menu:**
+I created the main menu scene for our game. It's main components are the "Play" and "Credits" buttons that lead to the appropriate scenes, the title, and an auto scrolling camera that pans the background image. I made use of TextMeshPro from the asset store which allowed me to further customize the text (cool font and gradient options). The buttons have a subtle highlight when the cursor moves over it and reverses the text as well. The [auto scrolling camera](https://github.com/kyle-andrus/RIP/blob/8e5a8976b6a033d1d859e65cc8830f5375600c47/Assets/Scripts/menuScripts/cameraScroll.cs#L1) eventually stops when the end of the background image is reached. I used Brackeys' awesome [tutorial](https://www.youtube.com/watch?v=zc8ac_qUXQY&t=1s) as a reference when designing this scene.   
+
+
+**Cutscene:**
+Created the structure for what a cutscene would look like. The player and enemy moved into the scene and spoke through textbubbles. The text had a "typewriter" effect to it which was based off of [this video](https://www.youtube.com/watch?time_continue=201&v=1qbjmb_1hV4). Andrew and I worked closely together on this part of the game since narrative had a big factor in this area. 
+
+_**Gameplay (Death, Score, Timer, Pickup)**_: 
+A lot of this was learning through trial and error. I was able to grasp a bit of how the canvas system worked through the Pirate project, but what really gave me the most knowledge on the UI interface was just through a lot of mistakes. Some challenging parts of this were differentiating between UI objects and regular ones, positioning these items correctly, and being able to bring it together to create something intuitive and aesthetically pleasing. Most of the HUD elements can be seen in the [gamePlayController](https://github.com/kyle-andrus/RIP/blob/11adb4d1ab86b13b8fd79ccb757365a40eaba350/Assets/Scripts/GamePlayScripts/GamePlayController.cs#L1) script. 
+
+#### Death
+Whenever the player dies, the death counter goes up by one. The code for the death counter is take the number of deaths the player currently has, and then change the text component of the text object to match what has happened. This can be seen through this portion of the [script](https://github.com/kyle-andrus/RIP/blob/11adb4d1ab86b13b8fd79ccb757365a40eaba350/Assets/Scripts/GamePlayScripts/GamePlayController.cs#L77)
+#### Score
+
+#### Timer
+
+#### Pickup 
 
 ## Movement/Physics
 

@@ -50,7 +50,7 @@ namespace GamePlay
         // UI
         public GameObject timer;
         public GameObject deathUI;
-        public GameObject scoreUI; 
+        public GameObject scoreUI;
 
         private GameObject player;
         private Vector2 currentCheckpoint;
@@ -100,7 +100,7 @@ namespace GamePlay
                     break;
                 case State.Win:
                     winStateTimer += Time.deltaTime;
-                    if(winStateTimer >= winStateDuartion)
+                    if (winStateTimer >= winStateDuartion)
                     {
                         SceneManager.LoadScene("EndingCutscene");
                     }
@@ -118,12 +118,11 @@ namespace GamePlay
                 // Spawn the dead body at the player's feet, this requires us to get the bottom side of the ground check box collider.
                 deadBodyLocation.y = player.transform.Find("GroundCheck").position.y - player.GetComponentInChildren<BoxCollider2D>().size.y / 2;
                 GameObject deadBody = (GameObject) GameObject.Instantiate(Resources.Load("Prefabs/DeadBody"), deadBodyLocation, Quaternion.identity);
-                if(player.GetComponent<SpriteRenderer>().flipX == true)
+                if (player.GetComponent<SpriteRenderer>().flipX == true)
                 {
                     Vector3 deadBodyScale = deadBody.transform.localScale;
                     deadBodyScale.Scale(new Vector3(-1, 1, 1));
                     deadBody.transform.localScale = deadBodyScale;
-                    Debug.Log(deadBody.transform.localScale);
                 }
 
                 Death();
@@ -132,9 +131,10 @@ namespace GamePlay
 
         public void DeadByAbyss()
         {
-            if(currentState == State.Playing)
+            if (currentState == State.Playing)
             {
-                Death();  
+                Death();
+                SecondaryCamera.GetComponent<ScreenShakeEffect>().Activate();
             }
         }
 
@@ -173,11 +173,6 @@ namespace GamePlay
             timeModifier = 0.50f;
         }
 
-        public void AddTime(float time)
-        {
-            this.totalTimeLeft += time;
-        }
-
         // Called when we first enter the play state.
         private void EnterPlayState()
         {
@@ -206,7 +201,7 @@ namespace GamePlay
             deathStateTimer += Time.deltaTime;
             if (deathStateTimer < deathStateDuration)
             {
-                
+
             }
             else
             {
