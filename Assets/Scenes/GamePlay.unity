@@ -1200,6 +1200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Cigarette
+      objectReference: {fileID: 0}
     - target: {fileID: 3528214513481039253, guid: a70684e66b9e46c6f987f04b782ab6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1254,11 +1259,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cigarette
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70684e66b9e46c6f987f04b782ab6e4, type: 3}
@@ -3295,6 +3295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Cigarette (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3528214513481039253, guid: a70684e66b9e46c6f987f04b782ab6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3350,11 +3355,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cigarette (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70684e66b9e46c6f987f04b782ab6e4, type: 3}
 --- !u!1001 &659425432
@@ -3364,6 +3364,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3418514561993283410, guid: 71c4ef3b30b8f6d67b441e9d0895fd53,
+        type: 3}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418514561993283410, guid: 71c4ef3b30b8f6d67b441e9d0895fd53,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3418514561993283408, guid: 71c4ef3b30b8f6d67b441e9d0895fd53,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3419,16 +3429,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3418514561993283410, guid: 71c4ef3b30b8f6d67b441e9d0895fd53,
-        type: 3}
-      propertyPath: m_Name
-      value: Checkpoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418514561993283410, guid: 71c4ef3b30b8f6d67b441e9d0895fd53,
-        type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 3418514561993283411, guid: 71c4ef3b30b8f6d67b441e9d0895fd53,
         type: 3}
       propertyPath: m_SortingOrder
@@ -3448,6 +3448,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Alcohol
+      objectReference: {fileID: 0}
     - target: {fileID: 530260617973682674, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3502,11 +3507,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Alcohol
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4, type: 3}
@@ -3750,6 +3750,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Alcohol (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 530260617973682674, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3804,11 +3809,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Alcohol (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4, type: 3}
@@ -4237,6 +4237,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Alcohol (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 530260617973682674, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4292,11 +4297,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Alcohol (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4, type: 3}
 --- !u!1001 &1199706769
@@ -4306,6 +4306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Alcohol (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 530260617973682674, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4360,11 +4365,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Alcohol (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4, type: 3}
@@ -4444,6 +4444,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Alcohol (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 530260617973682674, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4499,11 +4504,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4646571510610440886, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Alcohol (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7872aef1a7b9cbfa5ecdedf40749f4, type: 3}
 --- !u!1001 &1327438517
@@ -4513,6 +4513,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Cigarette (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3528214513481039253, guid: a70684e66b9e46c6f987f04b782ab6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4567,11 +4572,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cigarette (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70684e66b9e46c6f987f04b782ab6e4, type: 3}
@@ -5043,6 +5043,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Cigarette (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3528214513481039253, guid: a70684e66b9e46c6f987f04b782ab6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5097,11 +5102,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6259742919604643576, guid: a70684e66b9e46c6f987f04b782ab6e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cigarette (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70684e66b9e46c6f987f04b782ab6e4, type: 3}

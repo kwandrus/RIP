@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundAudio : MonoBehaviour
+public class GamePlayAudio : MonoBehaviour
 {
     [SerializeField] private AudioSource backgroundSong;
 
