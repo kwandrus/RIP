@@ -124,6 +124,11 @@ On the other hand, items and checkpoints are treated as [triggers](https://githu
 ## Press Kit and Trailer
 
 [Trailer](https://youtu.be/lx1-ISlhUis)
+[Press Kit] ()
+
+For press kit:
+[Source 1](http://www.aegisthegame.com/press-kit.html)
+[Source 2](https://www.youtube.com/watch?v=0mqnz9QfFck)
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
