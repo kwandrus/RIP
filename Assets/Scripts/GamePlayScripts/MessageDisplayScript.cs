@@ -3,36 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MessageDisplayScript : MonoBehaviour
+namespace GamePlay
 {
-    [SerializeField] private Text TextBox;
-    private float DisplayMessageDuration = 2.0f;
-    private float DisplayMessageTimer = 0.0f;
-    private bool IsActive = false;
-
-    private void Start()
+    public class MessageDisplayScript : MonoBehaviour
     {
-        TextBox.enabled = false;
-    }
+        [SerializeField] private Text TextBox;
+        private float DisplayMessageDuration = 2.0f;
+        private float DisplayMessageTimer = 0.0f;
+        private bool IsActive = false;
 
-    private void Update()
-    {
-        if (IsActive)
+        private void Start()
         {
-            DisplayMessageTimer += Time.deltaTime;
-            if (DisplayMessageTimer >= DisplayMessageDuration)
+            TextBox.enabled = false;
+        }
+
+        private void Update()
+        {
+            if (IsActive)
             {
-                IsActive = false;
-                TextBox.enabled = false;
-                DisplayMessageTimer = 0.0f;
+                DisplayMessageTimer += Time.deltaTime;
+                if (DisplayMessageTimer >= DisplayMessageDuration)
+                {
+                    IsActive = false;
+                    TextBox.enabled = false;
+                    DisplayMessageTimer = 0.0f;
+                }
             }
         }
-    }
 
-    public void DisplayMessage(string messageText)
-    {
-        TextBox.enabled = true;
-        TextBox.text = messageText;
-        IsActive = true;
+        public void DisplayMessage(string messageText)
+        {
+            TextBox.enabled = true;
+            TextBox.text = messageText;
+            IsActive = true;
+        }
     }
 }

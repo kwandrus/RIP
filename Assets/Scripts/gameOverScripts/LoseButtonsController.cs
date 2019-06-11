@@ -37,7 +37,6 @@ public class LoseButtonsController : MonoBehaviour
         else if (CurrentState == State.Switch)
         {
             // Switch state in case we have to add code here later.
-            Debug.Log("Loading " + SceneToLoad);
             SceneManager.LoadScene(SceneToLoad);
         }
     }
@@ -58,8 +57,6 @@ public class LoseButtonsController : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        Debug.Log("Updating Animation");
-
         float buttonMovementSpeed = 2000;
         float distanceToMove = Time.deltaTime * buttonMovementSpeed;
         Vector2 buttonMovementVectorLeft = new Vector2(-distanceToMove, 0);

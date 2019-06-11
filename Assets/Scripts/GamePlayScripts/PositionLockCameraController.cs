@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GamePlay.Player;
 
-namespace GamePlay.Player
+namespace GamePlay
 {
     public class PositionLockCameraController : MonoBehaviour
     {
@@ -49,6 +50,11 @@ namespace GamePlay.Player
             var cameraRotation = this.ManagedCamera.transform.rotation;
 
             cameraPosition = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
+            Vector3 curPos;
+            curPos = new Vector3(this.Target.transform.position.x, this.Target.transform.position.y, -100);
+
+            PlayerController playerController = (PlayerController)this.Target.GetComponent("PlayerController");
+
 
             if (cameraPosition.y < CameraLowerBound)
             {

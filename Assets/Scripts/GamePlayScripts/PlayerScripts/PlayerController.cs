@@ -52,6 +52,14 @@ namespace GamePlay.Player
             PlayerCollision.OnFallIntoAbyss += Death;
         }
 
+        private void OnDisable()
+        {
+            PlayerCollision.OnCollideWithCigarette -= PickUpCig;
+            PlayerCollision.OnCollideWithAlcohol -= PickUpAlcohol;
+            PlayerCollision.OnCollideWithHostile -= CollisionWithHostile;
+            PlayerCollision.OnFallIntoAbyss -= Death;
+        }
+
         private void LateUpdate()
         {
             if (isDrunk)

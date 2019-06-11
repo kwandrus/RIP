@@ -116,6 +116,14 @@ namespace GamePlay
             PlayerCollision.OnCollideWithCheckpoint += PlayerReachedCheckpoint;
         }
 
+        private void OnDisable()
+        {
+            PlayerCollision.OnFallIntoAbyss -= DeathByAbyss;
+            PlayerController.OnDeathEnemy -= DeathByEnemy;
+            PlayerController.OnPlayerReachedEndpoint -= PlayerReachedEndpoint;
+            PlayerCollision.OnCollideWithCheckpoint -= PlayerReachedCheckpoint;
+        }
+
         public void AddTime(float time)
         {
             this.totalTimeLeft += time;
@@ -200,12 +208,9 @@ namespace GamePlay
             StartCoroutine(player.gameObject.GetComponent<PlayerAudio>().WaitForSound(player));
 
             // Record where the camera was at time of death so we can lerp from this position to the player.
-            Debug.Log("Main camera: " + MainCamera.transform.position);
             lastDeathCameraLocation = MainCamera.transform.position;
-            Debug.Log("Secondary camera location: " + lastDeathCameraLocation);
             MainCamera.enabled = false;
             SecondaryCamera.transform.position = lastDeathCameraLocation;
-            Debug.Log("Secondary camera actual location: " + lastDeathCameraLocation);
             SecondaryCamera.enabled = true;
             player.transform.position = currentCheckpoint;
         }

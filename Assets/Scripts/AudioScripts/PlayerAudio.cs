@@ -19,6 +19,14 @@ public class PlayerAudio : MonoBehaviour
         PlayerCollision.OnFallIntoAbyss += DeathGrunt;
     }
 
+    private void OnDisable()
+    {
+        PlayerCollision.OnCollideWithCigarette -= PickUpItem;
+        PlayerCollision.OnCollideWithAlcohol -= PickUpItem;
+        PlayerCollision.OnCollideWithHostile -= DeathGrunt;
+        PlayerCollision.OnFallIntoAbyss -= DeathGrunt;
+    }
+
     public void JumpUp()
     {
         jumpUpSound.Play();

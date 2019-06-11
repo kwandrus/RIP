@@ -31,14 +31,17 @@ namespace GamePlay.Player
         {
             if (collision.transform.tag == "Cigarette")
             {
+                Debug.Log("Touching Cig");
                 OnCollideWithCigarette(collision.transform);
             }
             if (collision.transform.tag == "Alcohol")
             {
+                Debug.Log("Touching Alc");
                 OnCollideWithAlcohol(collision.transform);
             }
             if (collision.transform.tag == "Checkpoint")
             {
+                Debug.Log("Touching Checpoint");
                 OnCollideWithCheckpoint(collision.transform.position);
             }
         }
@@ -47,6 +50,7 @@ namespace GamePlay.Player
         {
             if (collision.transform.tag == "Hostile")
             {
+                Debug.Log("Touching Enemy");
                 OnCollideWithHostile();
             }
         }
