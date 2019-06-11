@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GamePlay.Player;
 
 public class PlayerAudio : MonoBehaviour
 {
@@ -8,6 +9,14 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] private AudioSource jumpLandSound;
     [SerializeField] private AudioSource deathGruntSound;
     [SerializeField] private AudioSource pickUpItemSound;
+
+    private void OnEnable()
+    {
+        PlayerCollision.OnCollideWithCigarette += PickUpItem;
+        PlayerCollision.OnCollideWithAlcohol += PickUpItem;
+        PlayerCollision.OnCollideWithHostile += DeathGrunt;
+        PlayerCollision.OnFallIntoAbyss += DeathGrunt;
+    }
 
     public void JumpUp()
     {
@@ -35,7 +44,7 @@ public class PlayerAudio : MonoBehaviour
         player.SetActive(false);
     }
 
-    public void PickUpItem()
+    public void PickUpItem(Transform item)
     {
         pickUpItemSound.Play();
     }

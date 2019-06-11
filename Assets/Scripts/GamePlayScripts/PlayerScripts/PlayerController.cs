@@ -32,24 +32,27 @@ namespace GamePlay.Player
 
         private float RightLevelBoundary;
 
-        public delegate void DeathAbyss();
-        public static event DeathAbyss OnDeathAbyss;
         public delegate void DeathEnemy();
         public static event DeathEnemy OnDeathEnemy;
         public delegate void PlayerReachedEndpoint();
         public static event PlayerReachedEndpoint OnPlayerReachedEndpoint;
 
         GamePlayController gamePlayController;
-        PlayerAudio playerAudio;
 
         private void Start()
         {
             gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
-            playerAudio = gameObject.GetComponent<PlayerAudio>();
-            //playerAudio = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerAudio>();
             drunkTimer = 0;
             AddictionIntervalTimer = 0;
             RightLevelBoundary = GameObject.FindGameObjectWithTag("Endpoint").transform.position.x;
+        }
+
+        private void OnEnable()
+        {
+            PlayerCollision.OnCollideWithCigarette += PickUpCig;
+            PlayerCollision.OnCollideWithAlcohol += PickUpAlcohol;
+            PlayerCollision.OnCollideWithHostile += CollisionWithHostile;
+            PlayerCollision.OnFallIntoAbyss += Death;
         }
 
         private void LateUpdate()
@@ -88,59 +91,22 @@ namespace GamePlay.Player
                 }
             }
 
-            if (gameObject.transform.position.y < 0.0f)
-            {
-                playerAudio.DeathGrunt();
-                OnDeathAbyss();
-                Death();
-            }
-
             if(gameObject.transform.position.x >= RightLevelBoundary)
             {
                 OnPlayerReachedEndpoint();
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void CollisionWithHostile()
         {
-            if (collision.transform.tag == "Hostile")
+            if (!isDrunk)
             {
-                if (!isDrunk)
-                {
-                    playerAudio.DeathGrunt();
-                    OnDeathEnemy();
-                    Death();
-                }
-            }
-            //if (collision.transform.tag == "Wall")
-            //{
-            //    this.gameObject.transform.Translate(new Vector2(-0.1f, 0.0f));
-            //}
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.transform.tag == "Cigarette")
-            {
-                PickUpCig();
-                GetComponent<PlayerAudio>().PickUpItem();
-                displayMessageCig();
-                Destroy(collision.transform.gameObject);
-            }
-            if (collision.transform.tag == "Alcohol")
-            {
-                PickUpAlcohol();
-                GetComponent<PlayerAudio>().PickUpItem();
-                displayMessageAlc();
-                Destroy(collision.transform.gameObject);
-            }
-            if(collision.transform.tag == "Checkpoint")
-            {
-                gamePlayController.PlayerReachedCheckpoint(collision.transform.position);
+                OnDeathEnemy();
+                Death();
             }
         }
 
-        private void PickUpCig()
+        private void PickUpCig(Transform cigarette)
         {
             pickUpBool = true;
             this.NumCigsCollected += 1;
@@ -151,9 +117,11 @@ namespace GamePlay.Player
                 gamePlayController.Addicted();
                 IsAddicted = true;
             }
+            pickUpText.text = "+1 Cigarette";
+            Destroy(cigarette.gameObject);
         }
 
-        private void PickUpAlcohol()
+        private void PickUpAlcohol(Transform alcohol)
         {
             pickUpBool = true;
             this.isDrunk = true;
@@ -164,6 +132,8 @@ namespace GamePlay.Player
                 gamePlayController.GameOverAlcohol();
             }
             gameObject.GetComponent<Command.PlayerInput>().randomizeControls();
+            pickUpText.text = "+1 Booze";
+            Destroy(alcohol.gameObject);
         }
 
         private void Death()
@@ -171,15 +141,6 @@ namespace GamePlay.Player
             drunkTimer = 0.0f;
             AddictionIntervalTimer = 0.0f;
             gameObject.GetComponent<Command.PlayerInput>().resetControls();
-        }
-
-        private void displayMessageCig()
-        {
-            pickUpText.text = "+1 Cigarette";
-        }
-        private void displayMessageAlc()
-        {
-            pickUpText.text = "+1 Booze";
         }
 
         public bool getDrunkState()

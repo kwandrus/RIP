@@ -30,7 +30,6 @@ namespace GamePlay
         private float Score = 0.0f;
         private float totalTimeLeft;
         private int numDeaths = 0;
-        private bool playerIsAddicted = false;
 
         private float timeModifier = 1.0f;
 
@@ -112,9 +111,10 @@ namespace GamePlay
 
         private void OnEnable()
         {
-            Player.PlayerController.OnDeathAbyss += DeathByAbyss;
+            PlayerCollision.OnFallIntoAbyss += DeathByAbyss;
             Player.PlayerController.OnDeathEnemy += DeathByEnemy;
-            Player.PlayerController.OnPlayerReachedEndpoint += PlayerReachedEndpoint; 
+            Player.PlayerController.OnPlayerReachedEndpoint += PlayerReachedEndpoint;
+            PlayerCollision.OnCollideWithCheckpoint += PlayerReachedCheckpoint;
         }
 
         public void AddTime(float time)
@@ -212,11 +212,7 @@ namespace GamePlay
         private void UpdateDeathState()
         {
             deathStateTimer += Time.deltaTime;
-            if (deathStateTimer < deathStateDuration)
-            {
-
-            }
-            else
+            if (deathStateTimer >= deathStateDuration)
             {
                 deathStateTimer = 0;
                 currentState = State.Checkpoint;

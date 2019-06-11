@@ -16,6 +16,16 @@ namespace GamePlay.Player
         public static event CollideWithCheckpoint OnCollideWithCheckpoint;
         public delegate void CollideWithHostile();
         public static event CollideWithHostile OnCollideWithHostile;
+        public delegate void FallIntoAbyss();
+        public static event FallIntoAbyss OnFallIntoAbyss;
+
+        private void Update()
+        {
+            if (gameObject.transform.position.y < 0.0f)
+            {
+                OnFallIntoAbyss();
+            }
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
