@@ -55,6 +55,7 @@ namespace GamePlay
         private GameObject player;
         private Vector2 currentCheckpoint;
         private Vector3 lastDeathCameraLocation;
+        private PlayerAudio playerAudio;
 
         // Start is called before the first frame update
         void Start()
@@ -62,6 +63,7 @@ namespace GamePlay
             currentCheckpoint = SpawnPoint;
             totalTimeLeft = TotalTime;
             player = GameObject.FindGameObjectWithTag("Player");
+            playerAudio = player.gameObject.GetComponent<PlayerAudio>();
             SecondaryCamera.enabled = false;
             Score = 1000;
         }
@@ -132,7 +134,7 @@ namespace GamePlay
 
         public void DeadByAbyss()
         {
-            if(currentState == State.Playing)
+            if (currentState == State.Playing)
             {
                 Death();  
             }
@@ -190,8 +192,9 @@ namespace GamePlay
             Score -= 100;
             currentState = State.Death;
 
-            // Don't let the player move while in death state.
-            player.SetActive(false);
+            // Need a Coroutine so the death (grunt) sound plays before the player gameObject is deactivated
+            StartCoroutine(playerAudio.WaitForSound(player));
+
             // Record where the camera was at time of death so we can lerp from this position to the player.
             lastDeathCameraLocation = MainCamera.transform.position;
             MainCamera.enabled = false;

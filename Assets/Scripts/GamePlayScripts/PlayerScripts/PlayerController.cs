@@ -33,12 +33,13 @@ namespace GamePlay.Player
         private float RightLevelBoundary;
 
         GamePlayController gamePlayController;
-        PlayerAnimation playerAnimation;
+        PlayerAudio playerAudio;
 
         private void Start()
         {
             gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
-            playerAnimation = gameObject.GetComponent<PlayerAnimation>();
+            playerAudio = gameObject.GetComponent<PlayerAudio>();
+            //playerAudio = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerAudio>();
             drunkTimer = 0;
             AddictionIntervalTimer = 0;
             RightLevelBoundary = GameObject.FindGameObjectWithTag("Endpoint").transform.position.x;
@@ -82,6 +83,7 @@ namespace GamePlay.Player
 
             if (gameObject.transform.position.y < 0.0f)
             {
+                playerAudio.DeathGrunt();
                 DeadByAbyss();
             }
 
@@ -97,6 +99,7 @@ namespace GamePlay.Player
             {
                 if (!isDrunk)
                 {
+                    playerAudio.DeathGrunt();
                     DeadByEnemy();
                 }
             }
