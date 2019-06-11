@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: d86d23a92e147483cadb69bdef89bee5
+  - enabled: 1
+    path: Assets/Scenes/EndingCutscene.unity
+    guid: 5424c70a0665abe42a47070d26aa0b08
+  - enabled: 1
+    path: Assets/Scenes/GameOverWin.unity
+    guid: a48c135673fb24d45bb8a0b5088b5553
   m_configObjects: {}
