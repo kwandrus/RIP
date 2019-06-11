@@ -128,7 +128,10 @@ While the mouse could’ve potentially been used as a controller based on its sc
 
 ## Narrative Design
 
-**oDocument how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+**Cutscenes** - The narrative is mainly present via the cutscenes before and after the gameplay. The tension in the first cutscene is emphasized by the appearance of a confrontation, coupled with ominous audio. In the second cutscene, subtle elements highlight the dialogue’s messages. For example, for the ending cutscene, [I added a separate script](https://github.com/kyle-andrus/RIP/blob/4049b0dfb10186dac8e7158a15a5acf0dc00dba4/Assets/Scripts/CutsceneScripts/EndingCutscene/EndingTypeWriter1.cs#L12) for the player’s dialogue to increase the delay between each letter displayed. I also added ellipses to present a slower, bolder statement. After the statement, I also made sure the player walked out of the screen at a [slower pace](https://github.com/kyle-andrus/RIP/blob/4049b0dfb10186dac8e7158a15a5acf0dc00dba4/Assets/Scripts/CutsceneScripts/EndingCutscene/EndingWalk.cs#L80), which would show he is more relaxed and truly changed like his dialogue stated. This delay wasn’t blatant yet was still enough for players to notice (like the human recognition of slight timing differences we learned about in the ADSR unit).
+
+**Collectibles** - The narrative is also present in the gameplay via a collectibles system. We added alcohol and cigarettes as collectibles, each of which had a short-term benefit but long-term consequence. Collecting (consuming) alcohol gave the player temporary invincibility, but their controls would be randomized, which ultimately detriments the player due to their strict time pressure. Cigarettes give the player a short amount of additional time, but they must now also collect more cigarettes within a short amount of time or immediately lose. In both cases, collecting too many of one kind will cause the player to lose. We tried to keep a realistic narrative by creating consumable effects similar in nature to real life, and the collectibles forced the player’s actions to parallel the main character’s (the player gradually learns that the short-term benefits aren’t worth it and must change to win the game).
+
 
 ## Press Kit and Trailer
 
