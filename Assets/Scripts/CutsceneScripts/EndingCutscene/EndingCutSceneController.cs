@@ -37,7 +37,7 @@ public class EndingCutSceneController : MonoBehaviour
             background.GetComponent<SpriteRenderer>().color = fadingColor;
         }
 
-        if (cutSceneTime <= 0f || Input.GetKeyDown(KeyCode.Space))
+        if (cutSceneTime <= 0f || Input.GetButtonDown("Jump"))
         {
             SceneManager.LoadScene("WinScene");
         }
