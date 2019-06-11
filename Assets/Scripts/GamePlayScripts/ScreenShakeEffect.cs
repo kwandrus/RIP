@@ -5,9 +5,6 @@ using UnityEngine;
 public class ScreenShakeEffect : MonoBehaviour
 {
     [SerializeField]
-    private float Frequency;
-    private float FrequencyTimer = 0.0f;
-    [SerializeField]
     private float Duration;
     private float Timer = 0.0f;
 
@@ -25,8 +22,6 @@ public class ScreenShakeEffect : MonoBehaviour
             if (Timer <= Duration)
             {
                 gameObject.transform.localPosition = InitialPosition + Random.insideUnitSphere * Curve.Evaluate(Timer/Duration);
-                Debug.Log("Initial position: " + InitialPosition);
-                Debug.Log("New location: " + gameObject.transform.position);
             }
             else
             {
@@ -40,7 +35,6 @@ public class ScreenShakeEffect : MonoBehaviour
     public void Activate()
     {
         InitialPosition = gameObject.transform.localPosition;
-        Debug.Log("Activate; Initial Position: " + InitialPosition);
         Active = true;
     }
 }

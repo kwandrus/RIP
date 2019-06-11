@@ -12,6 +12,7 @@ public class PlayerAudio : MonoBehaviour
 
     private void OnEnable()
     {
+        // Subscribers.
         PlayerCollision.OnCollideWithCigarette += PickUpItem;
         PlayerCollision.OnCollideWithAlcohol += PickUpItem;
         PlayerCollision.OnCollideWithHostile += DeathGrunt;

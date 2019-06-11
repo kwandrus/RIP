@@ -26,10 +26,6 @@ namespace GamePlay.Player
         [SerializeField]
         private float TIME_ADD_CIG = 10.0f;
 
-        [SerializeField] private Text pickUpText;
-        private float pickUpLife = 2f;
-        private bool pickUpBool = false;
-
         private float RightLevelBoundary;
 
         public delegate void DeathEnemy();
@@ -49,6 +45,7 @@ namespace GamePlay.Player
 
         private void OnEnable()
         {
+            // Subscribers.
             PlayerCollision.OnCollideWithCigarette += PickUpCig;
             PlayerCollision.OnCollideWithAlcohol += PickUpAlcohol;
             PlayerCollision.OnCollideWithHostile += CollisionWithHostile;
@@ -57,19 +54,6 @@ namespace GamePlay.Player
 
         private void LateUpdate()
         {
-            if (pickUpBool)
-            {
-                pickUpLife -= Time.deltaTime;
-
-                if (pickUpLife <= 0f)
-                {
-                    pickUpText.text = "";
-                    pickUpLife = 2f;
-                    pickUpBool = false;
-                }
-
-
-            }
             if (isDrunk)
             {
                 this.drunkTimer += Time.deltaTime;
@@ -108,7 +92,6 @@ namespace GamePlay.Player
 
         private void PickUpCig(Transform cigarette)
         {
-            pickUpBool = true;
             this.NumCigsCollected += 1;
             AddictionIntervalTimer = 0.0f;
             gamePlayController.AddTime(TIME_ADD_CIG);
@@ -117,13 +100,12 @@ namespace GamePlay.Player
                 gamePlayController.Addicted();
                 IsAddicted = true;
             }
-            pickUpText.text = "+1 Cigarette";
+            GameObject.FindObjectOfType<Canvas>().GetComponent<MessageDisplayScript>().DisplayMessage("+1 Cigarette");
             Destroy(cigarette.gameObject);
         }
 
         private void PickUpAlcohol(Transform alcohol)
         {
-            pickUpBool = true;
             this.isDrunk = true;
             this.numAlcoholsCollected += 1;
             this.drunkTimer = 0.0f;
@@ -132,7 +114,7 @@ namespace GamePlay.Player
                 gamePlayController.GameOverAlcohol();
             }
             gameObject.GetComponent<Command.PlayerInput>().randomizeControls();
-            pickUpText.text = "+1 Booze";
+            GameObject.FindObjectOfType<Canvas>().GetComponent<MessageDisplayScript>().DisplayMessage("+1 Booze");
             Destroy(alcohol.gameObject);
         }
 

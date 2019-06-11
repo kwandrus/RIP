@@ -54,7 +54,6 @@ namespace GamePlay
         private GameObject player;
         private Vector2 currentCheckpoint;
         private Vector3 lastDeathCameraLocation;
-        private PlayerAudio playerAudio;
 
         // Start is called before the first frame update
         void Start()
@@ -62,7 +61,6 @@ namespace GamePlay
             currentCheckpoint = SpawnPoint;
             totalTimeLeft = TotalTime;
             player = GameObject.FindGameObjectWithTag("Player");
-            playerAudio = player.gameObject.GetComponent<PlayerAudio>();
             SecondaryCamera.enabled = false;
             Score = 1000;
         }
@@ -111,9 +109,10 @@ namespace GamePlay
 
         private void OnEnable()
         {
+            // Subscribers.
             PlayerCollision.OnFallIntoAbyss += DeathByAbyss;
-            Player.PlayerController.OnDeathEnemy += DeathByEnemy;
-            Player.PlayerController.OnPlayerReachedEndpoint += PlayerReachedEndpoint;
+            PlayerController.OnDeathEnemy += DeathByEnemy;
+            PlayerController.OnPlayerReachedEndpoint += PlayerReachedEndpoint;
             PlayerCollision.OnCollideWithCheckpoint += PlayerReachedCheckpoint;
         }
 
@@ -198,12 +197,15 @@ namespace GamePlay
             currentState = State.Death;
 
             // Need a Coroutine so the death (grunt) sound plays before the player gameObject is deactivated
-            StartCoroutine(playerAudio.WaitForSound(player));
+            StartCoroutine(player.gameObject.GetComponent<PlayerAudio>().WaitForSound(player));
 
             // Record where the camera was at time of death so we can lerp from this position to the player.
+            Debug.Log("Main camera: " + MainCamera.transform.position);
             lastDeathCameraLocation = MainCamera.transform.position;
+            Debug.Log("Secondary camera location: " + lastDeathCameraLocation);
             MainCamera.enabled = false;
             SecondaryCamera.transform.position = lastDeathCameraLocation;
+            Debug.Log("Secondary camera actual location: " + lastDeathCameraLocation);
             SecondaryCamera.enabled = true;
             player.transform.position = currentCheckpoint;
         }
