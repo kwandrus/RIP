@@ -60,11 +60,10 @@ When the player dies from overconsumption of alcohol, he/she is redirected to th
 When the player gets addicted to cigarettes, he/she is redirected to this scene. There was a bit of animation in this scene that I played around with. 
 
 #### GameOver Win
-
+If the player reaches the end, they are first redirected to a small cutscene, and then this scene. Here, the color of the background periodically changes and the title moves around. It's like a party simulator. This uses the getComponent, Color, and Random aspects of Unity. [Script](https://github.com/kyle-andrus/RIP/blob/54a9fb59bf9f1c39347130961945c9b7bbe644ac/Assets/Scripts/backColorChange.cs#L1). 
 
 #### Credits
-
-
+In the credits, all of our names are shown in the middle of the screen one at a time. Camera position and Vector3.MoveTowards were useful here. There were 5 scripts, here is [one](https://github.com/kyle-andrus/RIP/blob/ae2939d2a30147a5f2da685627e13917108c6a3f/Assets/Scripts/CreditsScripts/tonyController.cs#L1) of them. I got the idea of MoveTowards from [here](https://answers.unity.com/questions/570573/how-do-i-slowly-translate-a-object-to-a-other-obje.html). 
 
 
 ## Movement/Physics
