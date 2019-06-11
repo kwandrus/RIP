@@ -3933,6 +3933,11 @@ PrefabInstance:
       propertyPath: TIME_ADD_CIG
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5756456848098876766, guid: 950332a65b433b9488761f15f6f35069,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 950332a65b433b9488761f15f6f35069, type: 3}
 --- !u!1001 &1044279006
