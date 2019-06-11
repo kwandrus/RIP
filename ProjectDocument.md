@@ -155,10 +155,25 @@ In addition to state-keeping, I programmed the GamePlayController to contain [su
 ## Audio
 
 **List your assets including their sources, and licenses.**
+Grunt - Death: https://opengameart.org/content/grunt ; CC-by 3.0 license, Author: n3b
+Jump Landing: https://opengameart.org/content/jump-landing-sound ; CC0 license
+Jump: https://freesound.org/people/cabled_mess/sounds/350906/ ; CC0 license
+GamePlay Song - Imaginary Dystopia: https://opengameart.org/content/imaginary-dystopia ; CC0 license
+CutScene Song - Nosferatus House Party: https://opengameart.org/content/nosferatus-house-party ; CC0 license
+Picking Up Items: https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116?fbclid=IwAR11wXyhT3HET8lP-AJ3_D4gO9OAOuR2x_9JA0ec3HkkOkDs2yq-UsnI5RA ; CC0 license
 
 **Describe the implementation of your audio system.**
+The audio in our game was mainly focused around adding assets to the player and the songs to each scene. For organization, I wrote a separate script for each asset that I was developing sound for, which included the various sounds that corresponded to the Player in the GamePlay scene and the background songs for the beginning cutscene and the GamePlay scene (3 scripts). Caleb (Game Feel) also found audio - the sound that cues after picking up an item.
+
+For implemention, I first created an empty GameObject in the scene and added an Audio Source component to each. Since Audio Sources have a clip element to them, I attached the relevant sound clip to each Audio Source. For the background songs, I then went to the Camera object in the scene (I could have chosen any object that is used in the scene and never disappears) and attached the audio script that I wanted to use (ie. the Cut Scene Audio script to attach the cut scene background song). In each script, I used a Serialized field for the audio source that I wanted to play. After attaching the audio source and calling the function in the script to play the sound, the relevant sound plays.
+
+For the Player Object in the GamePlay scene, the same as above was performed for the jumping sounds and sounds for picking up items. However, playing the grunt sound correctly required a couple extra steps. In the PlayerAudio.cs script, I had to create a function that returned an IEnumerator. The grunt sound is played when the player dies from running into an enemy and when they fall below the platform scene, which cues the game object to be set to inactive. Since the sound won't play once the game object is deactivated, I added a coroutine using StartCoroutine() in GamePlayController.cs [link to coroutine call](https://github.com/kyle-andrus/RIP/blob/aade263f4579a75ca30d0ab0c7f9391d3509d42b/Assets/Scripts/GamePlayScripts/GamePlayController.cs#L208) and the IEnumerator function in the audio script, which causes the script to halt progress until the entire grunt sound clip has played.
 
 **Document the sound style.** 
+After adding the sound assets, the game feel of the game was completely enhanced. Since our game is quite dark, based on the fact that the goal of our level is to get to rehab and is faced with avoiding his shadow throughout, I chose quite dark music for the cut scene as well as the GamePlay scene. Since we used art assets that resemble traditional platformers, we wanted the GamePlay song to also showcase the same theme, so I think the dark, fast-paced, retro song used in the GamePlay scene fit perfecting. The jumping sounds also fit the same retro vibe. We included an audible grunt for the player to give the feeling that the player is an actual man, which is supplmented by the death animation.
+
+For the cut scene, since this is the first part of the game and therefore the first aspect of game feel the player gets (besides the main menu), we wanted to build the drama and tension between the shadow and the player. I believe the song that I chose for the cut scene successfully achieved that.
+
 
 ## Gameplay Testing
 
