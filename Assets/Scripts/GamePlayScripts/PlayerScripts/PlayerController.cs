@@ -95,7 +95,10 @@ namespace GamePlay.Player
         {
             if (collision.transform.tag == "Hostile")
             {
-                DeadByEnemy();
+                if (!isDrunk)
+                {
+                    DeadByEnemy();
+                }
             }
             //if (collision.transform.tag == "Wall")
             //{
