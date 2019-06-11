@@ -32,13 +32,18 @@ namespace GamePlay.Player
 
         private float RightLevelBoundary;
 
+        public delegate void DeathAbyss();
+        public static event DeathAbyss OnDeathAbyss;
+        public delegate void DeathEnemy();
+        public static event DeathEnemy OnDeathEnemy;
+        public delegate void PlayerReachedEndpoint();
+        public static event PlayerReachedEndpoint OnPlayerReachedEndpoint;
+
         GamePlayController gamePlayController;
-        PlayerAnimation playerAnimation;
 
         private void Start()
         {
             gamePlayController = GameObject.FindObjectOfType<GamePlayController>();
-            playerAnimation = gameObject.GetComponent<PlayerAnimation>();
             drunkTimer = 0;
             AddictionIntervalTimer = 0;
             RightLevelBoundary = GameObject.FindGameObjectWithTag("Endpoint").transform.position.x;
@@ -82,12 +87,13 @@ namespace GamePlay.Player
 
             if (gameObject.transform.position.y < 0.0f)
             {
-                DeadByAbyss();
+                OnDeathAbyss();
+                Death();
             }
 
             if(gameObject.transform.position.x >= RightLevelBoundary)
             {
-                gamePlayController.PlayerReachedEndPoint();
+                OnPlayerReachedEndpoint();
             }
         }
 
@@ -97,7 +103,8 @@ namespace GamePlay.Player
             {
                 if (!isDrunk)
                 {
-                    DeadByEnemy();
+                    OnDeathEnemy();
+                    Death();
                 }
             }
             //if (collision.transform.tag == "Wall")
@@ -152,20 +159,6 @@ namespace GamePlay.Player
                 gamePlayController.GameOverAlcohol();
             }
             gameObject.GetComponent<Command.PlayerInput>().randomizeControls();
-        }
-
-
-        private void DeadByAbyss()
-        {
-            gamePlayController.DeadByAbyss();
-            Death();
-        }
-
-        private void DeadByEnemy()
-        {
-            // Teleport back to last checkpoint.
-            gamePlayController.DeadByEnemy();
-            Death();
         }
 
         private void Death()

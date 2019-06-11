@@ -108,13 +108,20 @@ namespace GamePlay
             }
         }
 
+        private void OnEnable()
+        {
+            Player.PlayerController.OnDeathAbyss += DeathByAbyss;
+            Player.PlayerController.OnDeathEnemy += DeathByEnemy;
+            Player.PlayerController.OnPlayerReachedEndpoint += PlayerReachedEndpoint; 
+        }
+
         public void AddTime(float time)
         {
             this.totalTimeLeft += time;
         }
 
         // Called once when player touches enemy.
-        public void DeadByEnemy()
+        public void DeathByEnemy()
         {
             if (currentState == State.Playing)
             {
@@ -129,12 +136,11 @@ namespace GamePlay
                     deadBodyScale.Scale(new Vector3(-1, 1, 1));
                     deadBody.transform.localScale = deadBodyScale;
                 }
-
                 Death();
             }
         }
 
-        public void DeadByAbyss()
+        public void DeathByAbyss()
         {
             if (currentState == State.Playing)
             {
@@ -144,10 +150,9 @@ namespace GamePlay
         }
 
         // TODO: Add win sequence/scene.
-        public void PlayerReachedEndPoint()
+        public void PlayerReachedEndpoint()
         {
             currentState = State.Win;
-            Debug.Log("win");
         }
 
         // Assumes that checkpoint's pivot lies at (0,0) of the sprite
