@@ -83,11 +83,33 @@ _Colliders_ - The player and everything they interact with has an associated col
 Enemies, the ground, and walls all act as regular colliders when there is a collision between them and a player, they will not let the other go through them.
 
 On the other hand, items and checkpoints are treated as [triggers](https://github.com/kyle-andrus/RIP/blob/54a9fb59bf9f1c39347130961945c9b7bbe644ac/Assets/Scripts/GamePlayScripts/PlayerScripts/PlayerController.cs#L119). This is because there is no need for the physics aspects of colliders to come into play when these objects are collided with. They are there to [detect overlap](https://forum.unity.com/threads/collision-vs-trigger.30174/#post-196535).
+
+
 ## Animation and Visuals
 
 **List your assets including their sources, and licenses.**
+[Carboard box, alcohol bottle](https://opengameart.org/content/recycle-items-set) ; CC3.0-by 3.0 license, Author - Clint Bellanger
+[Player (man with pony tail)](https://hugues-laborde.itch.io/cartoon-side-scroller-character) ; CC3.0-by 3.0 license, Author - Hugues Laborde
+[Shadow character](https://hugues-laborde.itch.io/pack-character-pixel-art-05) ; CC3.0-by 3.0 license, Author - Hugues Laborde
+[Cigarette](https://opengameart.org/content/various-inventory-24-pixel-icon-set) ; CC3.0-by 3.0 license, Author - OceansDream
+[Wall and Ground Tiles](https://assetstore.unity.com/packages/2d/environments/free-8-bit-pixel-pack-79530?fbclid=IwAR0IuR3Pkv3mrRmjArXrsPy2X7mUIN8IHpoUNtINgbr1-UNhEVKS-YaWBLU) ; CC0 license
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+For the animations, I created many more than we ended up using based on the narrative and the final abilities for the player, but I primarily built animations for the player and the shadow (enemy) character. To avoid having to make my own pixel art, I chose to find full packages of pre-made art assets that I could divide up into the various individual animations and create a state machine for them.
+
+Our initial visual idea for the show was to create a scene that resembled the location of a film noir movie. Therefore, we agreed upon a night city background, which perfectly set the mood for our narrative, where our player struggles with cigarettes and alcohol and is trying to get to rehab.
+
+### Player and Enemy Shadow Character
+Our player initially was going to have an active role in the gameplay, where the player is able to crouch and shoot at enemy characters. However, based on the overall layout of our level, we felt a speed run mechanic would work best, so we therefore elimated the ability to shoot and deal damage altogether to enemy characters. So, to traverse through the level, the character is able to jump, run, and die, and the player's state machine reflects that.
+
+For each animation that we ended up using, I had to go through each png file that made up each animation and slice them. This prevented the animation from visually jumping around the screen and centered the animations for smooth transitions. The same had to be done for the enemy character's run animation. For both the enemy and the player, I created a state machine that included each animation and transitions between the states that were set by booleans. From there, animator components were attached to the game objects.
+
+### Overall Level and World-Building
+Since our game is a platformer (RIP - rage inducing platformer), we wanted our game to follow the typical feel found in retro platformers, such as Mario. Caleb (Game Feel) and I found a tile asset package that fit perfectly for this theme. I initially found other tile assets that looked like full platforms and others that looked like slabs of concrete, but we felt that the block tile assets worked better for us for 2 main reasons:
+
+1) The level was easier to create using tiles. Since the other platforms that I found took up an arbitrary amount of space in the scene, it was a lot harder to align those to a given jump height than it was to use with tiles. Tiles have a fixed height and length, so from the ground, a fixed number of tiles could be stacked on top of each other, meaning there was a known height for how high the player has to jump to reach that platform.
+
+2) We wanted the entire game experience to feel interconnected, which in my case includes the art and the sound. Since we were aiming for the retro, pixelated platformer theme, we needed our art to evoke the same feeling. By using tiles that resemble tiles used in Super Mario for example, the (human) player is immediately thrown into a retro, pixelated world that most likely differs from other retro platformers that they have played due to our film noir setting.
 
 ## Input
 
