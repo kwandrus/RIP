@@ -7,9 +7,7 @@ Yet the shadow of your past continues to pursue you, in hopes of being able to f
 
 ## Gameplay explanation ##
 
-**In this section, explain how the game should be played. Treat this like a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
-
-
+Use WASD or the arrow keys to move around the game. Jump can be also achieved with the spacebar in addition to the "up" buttons previously mentioned. There are "buffs" around the level that may or may not aid the player. The most optimal gameplay strategy to to get through the level quickly, but carefully. Death subtracts points from the overall score. 
 
 
 # Main Roles #
