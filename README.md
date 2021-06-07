@@ -1,5 +1,5 @@
 # RIP
-Rage Inducing Platformer (RIP) is a 2D platformer built in Unity. The objective is to reach the final checkpoint with the highest remaining score using only jump and movement controls. There are several ways to die in our game, including by lung cancer from smoking cigarettes, colliding with a shadow enemy, and falling off the platforms. Colliding with a beer bottle disorients the user and randomly mixes up the control inputs for a few seconds.
+Rage Inducing Platformer (RIP) is a 2D platformer built in Unity. The objective is to traverse the dangerous city littered with reminders of your past self. You must try to resist these urges and make it to the finish as fast as possible. There are several ways to die in our game, including by lung cancer from smoking cigarettes, coming in contact with a shadow creature, and falling off the platforms. Colliding with a beer bottle disorients the user and randomly mixes up the control inputs for a few seconds.
 
 ## Team
 Name | Main Role | Sub-Role
